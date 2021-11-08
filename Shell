@@ -14,3 +14,7 @@ echo && "bash"
 # Windows Bypass powershell
 powershell.exe -exec bypass 
 powsershell.exe -ep bypass -no
+------------------------------------
+powershell.exe -exec bypass 
+powsershell.exe -ep bypass -nop
+evil-winrm -i <ipadresi> -u <username> -p <password>
