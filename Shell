@@ -1,0 +1,11 @@
+Interactive TTY Shell
+*python
+python -c 'import pty; pty.spawn("/bin/sh")'
+*Echo
+echo 'os.system('/bin/bash')'
+*sh
+/bin/sh -i
+# bash
+/bin/bash -i
+*kısıtlı shell 
+echo && "bash"
