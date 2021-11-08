@@ -21,3 +21,9 @@ X-Originating-IP: 127.0.0.1
 X-Forwarded-For: 127.0.0.1
 X-Remote-IP: 127.0.0.1
 X-Remote-Addr: 127.0.0.1
+
+------------------------------------
+
+# Windows Bypass powershell
+powershell.exe -exec bypass 
+powsershell.exe -ep bypass -nop
