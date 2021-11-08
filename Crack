@@ -1,0 +1,33 @@
+#Crack
+
+*Cewl
+cewl http://<targetip>/ -m 6 -w cewl.txt
+
+*hashcat -h | grep -i lm 
+hashcat -m 3000  hashes --rules --wordlist=/usr/share/wordlists/rockyou.txt
+
+*John
+john hashes.txt --rules --wordlist=/usr/share/wordlists/rockyou.txt 
+
+*Cupp
+python3 cupp.py -i
+
+*MP64
+mp64 m?s?l?u?m
+
+*ZipCrack
+zip2john encrypted.zip > encrypted.hash$ : hashi çıkar
+john --show encrypted.hash : hashi kır.
+
+*hydra
+hydra -l user -P passlist.txt ftp://192.168.0.1
+
+*Medusa
+medusa -h <targetip> -u admin -P /usr/share/wordlists/rockyou.txt -M http -m DIR:/test -T 10
+
+crunch 4 5 abc123 -o wordlist.txt = minumum 4 maximum 5 karakterden olusturur.
+? ? 2 3 ? 8 ? = soru isaretleri olan yerleri bilmiyoruz sifre ile doldurucaz.(7 karakter var)
+crunch 7 7 -t %%23%8% 1234567890 -o wordlist.txt = bilmedigimiz karakterlerin yerine % isareti koyuyoruz.
+crunch 12 12 -t sinem.sinem% 123456789abcdefgh -o wordlist.txt
+crunch 17 17 -t kocatepe%%%%%%%%% 123456789abcdefgh  > d.txt örneğin kocatepe arkasına yüzdelik işaretler ile 9 tane daha harf ve sayı gelmesini istedik böylece
+kcoatepe kelime sayısı ile birlikte 17 tane karakter belirledik
