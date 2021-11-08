@@ -1,0 +1,14 @@
+#roadmap
+
+1- İd öğren (id)
+2- Kullanıcı adı öğren (whoami)
+3- Host adı öğren (hostname)
+4- Farklı kullanıcı varmı kontrol et (/home/user)
+4- Kernelı öğren (uname -a , cat /etc/*-release)
+5- Password bulma (find , history ,locate )
+6- sudo listelerine bak (sudo -l)
+7- shadow dosyasına bak
+8- preload kontrol et
+9- Suid bit kontrol et ve crontab bak (find , -u=s // /etc/crontab)
+10- Çevresel değişkenleri kontrol et
+11- sudo versiyon açığı varmı kontrol et
