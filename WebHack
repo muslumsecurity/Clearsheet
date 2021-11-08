@@ -35,6 +35,13 @@ https://www.businessyeti.com/Apps/CreditCardGenerator/
 hunter.io/
 https://receive-smss.com/ : sms doğrulamaları için site
 --------------------------------------------
+
+# nikto
+nıkto -h <targetip>
+skipsfish -o <kaydetmeadı> <websitesi>
+
+----------------------------------------------
+
 # Dns zone Enum
 fierce -dns <adress>
 dnsrecon <adress> 
