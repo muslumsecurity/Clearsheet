@@ -1,3 +1,4 @@
+# Linux
 Interactive TTY Shell
 *python
 python -c 'import pty; pty.spawn("/bin/sh")'
@@ -9,3 +10,7 @@ echo 'os.system('/bin/bash')'
 /bin/bash -i
 *kısıtlı shell 
 echo && "bash"
+------------------------------------
+# Windows Bypass powershell
+powershell.exe -exec bypass 
+powsershell.exe -ep bypass -no
