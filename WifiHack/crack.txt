@@ -1,0 +1,7 @@
+john --wordlist=wordlist --stdout --session=muslum | aircrack-ng -w - -b <modemmacadresi> <yakalanahandshake> //kaldigimiz yerden devam etmek icin johna veriyoruz
+john --restore=muslum | aircrack-ng -w - -b <modemmacadresi> <yakaladgigimizhandshake> //buradan kaldigimiz yerden devam ediyor.
+
+
+crunch 8 8 | aircrack-ng -w - -b <modemacadresi> <yakaladigimizhandshake> // crunch dan cikan kelimeleri direk olarak aircrack-ng aktariyoruz. boylece wordlist olustrmak zorunda kalmiyoruz.
+
+
