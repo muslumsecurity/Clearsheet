@@ -35,6 +35,7 @@ arp -a : arp tablolarına bakma
 route print : route tablolarını görebiliriz.
 netstat -ant : portlar hakkında bilgi verir.
 netstat -ano : portlar hakkında bilgi verir.
+route print : route tablosunu görüntüler.
 
 ------------------------- Dosya Transfer ------------------------------
 certutil.exe --urlcache -split -f "<url>"
