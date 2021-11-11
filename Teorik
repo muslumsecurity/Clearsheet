@@ -1,0 +1,16 @@
+FTP : File transfer protokol tcp bazlı bir servis olup 21. port üzerinde çalışmaktadır. Amacı dosyalarını barındırmak yada çok büyük projelerde dosya paylaşım alanı 
+olarak kullanılmasıdır. Bu protokol üzerine yapılabilecek saldırılar içinde brute force ve anonymous login özelliğini kullanarak erişim sağlamaktır.
+
+SSH : Uzak cihazlarda sistem yönetimi yapmak amacı ile tasarlanmış 22. port üzerinde çalışan tcp bazlı bir protokoldür.
+
+TELNET : karmaşık network yapılarında uzak cihazlarda sistem yönetimi yapmak amacı ile tasarlanmış 23. port üzerinde çalışan tcp bazlı güvenli olmayan bir protokoldür.
+
+SMTP : Basit mail aktarım protokolüdür. Doğru konfigürasyon yapılmaması halinde anonim olarak aktarım serverı olarak kullanabilir ve fake mailleri atabilir. Yahut 
+kullanıcı enumerationı gerçekleştirebilir.
+
+DNS : Domainin point ettiği ip adreslerinin tespit edilmesinden sorumlu 53. port üzerinde çalışan udp bazlı bir protokol ve servistir. Servis doğru yapılandırılmaması
+halinde yankı saldırıları gerçekleştirilebilir. Yahut bir domainin aynı dataları paylaşan subdomainleri keşfi gerçekleştirilebilir.(dns zone)
+
+SAMBA : 445. port veya 139. port üzerinden çalışan tcp bazlı bir protokol ve servistir. Amacı domain yapıları kurmak,dosya paylaşımları ve sistem yönetimi yapmaktır.
+
+TOMCAT : 8180. portu üzerinde çalışan bir protokol ve servistir. jsp projeleri geliştirmek amaçlı apache'nin alt projesi olarak kurulmuştur.
