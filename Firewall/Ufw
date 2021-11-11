@@ -1,0 +1,14 @@
+ufw enable : ufw aktif hale getirir.
+ufw disable : ufw deaktif hale getirir.
+ufw verbose status tanımlanan kuralları gösterir
+ufw status numbered : kuralları belli bir sıralamaya sokar.
+ufw delete <sayı gelicek> : sıralanan kuralları sayı girerek siler.
+----------------------------------------------------------
+ufw allow 80 : 80 numaralı porta izin verir.
+ufw allow 53/tcp : tcp protokolü ile gelen dns isteklerine izin verir.
+ufw allow from 192.168.1.1/16 : belli bir subnetin erişimine izin verir.
+ufw allow from 192.168.1.1 to any port 22 : belli bir ip nin porta erişimine izin verir.
+ufw allow from <ipadresi> to any port 22 proto tcp : belli bir protokole gelen isteğe izin verir.
+-----------------------------------------------------------
+ufw deny 80 : 80 numaralı porta gelen isteklere izin vermez.
+ufw deny 80/tcp : belli bir protokolden gelen isteğe izin vermez.
