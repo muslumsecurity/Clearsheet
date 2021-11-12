@@ -14,3 +14,18 @@ halinde yankı saldırıları gerçekleştirilebilir. Yahut bir domainin aynı d
 SAMBA : 445. port veya 139. port üzerinden çalışan tcp bazlı bir protokol ve servistir. Amacı domain yapıları kurmak,dosya paylaşımları ve sistem yönetimi yapmaktır.
 
 TOMCAT : 8180. portu üzerinde çalışan bir protokol ve servistir. jsp projeleri geliştirmek amaçlı apache'nin alt projesi olarak kurulmuştur.
+
+
+SMB(Microsoft) : 445. port üzerinde çalışan tcp bazlı bir servis ve protokoldür. Yetkili bir credential elde edilmesi durumunda bu servis üzerinden bir reverse shell 
+elde edilebilir.
+
+SMB SİGN : Bu özellik mesaj blokları üzerinde giden bir imza özelliğidir. Kapalı olması durumunda default olarak kapalı gelmektedir. Açılmaması durumunda kullanıcı 
+hashleri yönlendirilerek man in the middle saldırıları gerçekleştirilebilir.
+
+MSSQL : 1433 portunda çalışan tcp bazlı bir servistir. Kullanım alanı linux da mysql olduğu gibi databaseler kurmak ve kullanmaktır. Yetkili bir kullanıcı bulunması 
+xp_cmdshell fonksiyonu kullanılarak reverse shell elde edlibelir.(default username "sa")
+
+arpspoof : Cihazların fiziksel adreslerine ip adreslerini tanımlayan arp protokolünün kullanarak ağa kendini farklı bir cihazmış gibi tanıtması.
+
+LLMNR - NBTNSPOOSİNG : Windows domain yapılarında cihazları veya share noktalarını bulmak ve erişmek için kullanılan bir servistir. Kullanıcı gitmek istediği noktayı
+belirledikten sonra cihaz bu özellik aktif ise 
