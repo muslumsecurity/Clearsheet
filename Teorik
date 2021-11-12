@@ -29,5 +29,5 @@ arpspoof : Cihazların fiziksel adreslerine ip adreslerini tanımlayan arp proto
 
 LLMNR - NBTNSPOOSİNG : Windows domain yapılarında cihazları veya share noktalarını bulmak ve erişmek için kullanılan bir servistir. Kullanıcı gitmek istediği noktayı
 belirledikten sonra cihaz bu özellik aktif ise bütün ağa aranılan noktayı sorar. Bunu kötüye kullanmak isteyen bir korsan erişilmek istenen yerin kendisi olduğunu 
-belirten cevaplar dönerek bağlanmak isteyen cihazın kendisine bağlanmasını sağlar bu noktada windows mimarisi gereği kullanıcı hashleri yakalanarak kimi zaman kırılmaya 
-kimi zaman yönlendiri
+belirten cevaplar dönerek bağlanmak isteyen cihazın kendisine bağlanmasını sağlar bu noktada windows mimarisi gereği yetkli kullanıcı hashleri yakalanarak kimi zaman kırılmaya 
+kimi zaman yönlendirilerek cihazlar üzerinde reverse sheller elde edilebilir.
