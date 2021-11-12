@@ -1,0 +1,6 @@
+nmap -f <ipadres> -n -T5
+nmap -D <fakeip> <gercekip> -n -5
+nmap --badsum <ipadres>
+nmap <ipadres> -Pn -n -T5
+nmap --mtu 5 <ipadre> -n -T5
+nmap  <ipadre> -S -n --T5
