@@ -1,0 +1,14 @@
+Knock
+
+apt-get install knockd
+Then you simply type: knock [ip] [port]. For example: knock 192.168.1.102 4000 5000 6000
+After that you have to scan the network to see if any new port is open.
+If you know what port is open you can connect to the port using netcat. The following command would work nc 192.168.1.102 8888. This would then connect to the port.
+Nmap/bash
+
+for x in 4000 5000 6000; do nmap -Pn --host_timeout 201 --max-retries 0 -p $x server_ip_address; done
+Netcat
+nc 192.168.1.102 4000
+nc 192.168.1.102 5000
+nc 192.168.1.102 6000
+nc 192.168.1.102 8888
