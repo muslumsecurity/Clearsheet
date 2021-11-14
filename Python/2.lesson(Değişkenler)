@@ -1,0 +1,6 @@
+x = 3 
+y = 3 
+print(x)
+print(y)
+
+type(x) : x Değişkeni içerisine tanımlanmış veri tipini öğrenmeye yarar
