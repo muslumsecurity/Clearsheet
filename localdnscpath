@@ -1,0 +1,11 @@
+#Windows
+edit C:\Windows\System32\drivers\etc\hosts
+#linux
+/etc/hosts
+
+
+#chrome
+chrome://net-internals/#dns
+
+#Firefox
+about:networking#dns
