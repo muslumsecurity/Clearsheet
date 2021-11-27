@@ -34,4 +34,4 @@ root@kali:~# cat hosts.txt
 root@kali:~# dnsspoof -i eth0 -f hosts.txt
 ----------------------------------------------------------------------------------
 mailsnarf -i eth0
-dsniff -i wlan0
+dsniff -i wlan0 : password crack man in the middle
