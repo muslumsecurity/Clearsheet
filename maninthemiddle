@@ -33,3 +33,5 @@ root@kali:~# cat hosts.txt
 192.168.1.9 someplace.com
 root@kali:~# dnsspoof -i eth0 -f hosts.txt
 ----------------------------------------------------------------------------------
+mailsnarf -i eth0
+dsniff -i wlan0
