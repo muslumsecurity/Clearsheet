@@ -31,4 +31,41 @@
           }
          }
          }
-     
+<form action="" method="get">
+  <input type="text" name="search">
+  <input type="submit" value="gonder">
+</form>
+  
+  
+  
+  <-- TRUE - FALSE -->  
+ <?php
+$search_value = $_GET["search"];
+$con= new mysqli("localhost","root","","xssstored");
+
+if($con->connect_error){
+    echo 'Connection Faild: '.$con->connect_error;
+    }else{
+        $sql="select count(*) as cntUser from xss where data like '%$search_value%'";
+        $res=$con->query($sql);
+        $row=$res->fetch_assoc();
+        $count = $row['cntUser'];
+      
+        if ($count > 0) {
+            echo "var";
+          }else {
+            echo 'yok';
+          }
+
+
+
+            }
+
+
+?>
+
+
+<form action="" method="get">
+  <input type="text" name="search">
+  <input type="submit" value="gonder">
+</form>
