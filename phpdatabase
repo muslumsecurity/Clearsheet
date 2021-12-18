@@ -69,3 +69,19 @@ if($con->connect_error){
   <input type="text" name="search">
   <input type="submit" value="gonder">
 </form>
+
+<---- listeleme ---->
+function show(){
+    $con=mysqli_connect("localhost","root","","xssstored") or die("Hata");
+    $sql="select * from xss";
+    $res=mysqli_query($con,$sql);
+    $counter = 0;
+    while( $sonuc=mysqli_fetch_array($res,MYSQLI_NUM) ){
+    foreach ($sonuc as $key => $value) {
+      $counter++;
+      echo $value."<input type='checkbox' id='vehicle' name='".$counter."' value='Bike'>"."<br/>";
+    }
+  }
+
+  }
+
