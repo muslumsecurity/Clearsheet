@@ -1,0 +1,30 @@
+<?php
+
+$ad = "müslüm";
+$soyad  = "dag";
+
+echo $ad . $soyad."</br>" ; 
+echo "selamlar $ad $soyad"."</br>";
+
+/*
+$dizi  = array(); 1. şekli
+$dizi2[] = "" ;  2. şekli
+*/
+
+// ornek 1
+$example = array("muslum","dag","em");
+echo $example[0];
+
+// example dizi içinde dizi tanımlama
+$example2 = array("muslum"=>"merhaba","ali");
+echo $example2['muslum']."</br>";
+
+
+// 2. şekil kullanım
+
+$dizi[]="benim";
+$dizi[]="adım";
+
+echo $dizi[0]." ".$dizi[1];
+
+?>
