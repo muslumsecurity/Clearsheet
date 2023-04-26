@@ -22,3 +22,14 @@ echo $new_cars["Guc"];
 
 
 ?>
+
+
+// Coklu diziler
+
+$cars_news = [
+             ["marka" => "Wv","hacim" => 9.5],
+             ["marka" => "opel","hacim" => 10.5]];
+foreach ($cars_news as $marka) {
+          echo $marka[0];
+echo "</br>";
+}
