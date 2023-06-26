@@ -22,10 +22,59 @@ Github üzerinde arama alanında keywords kullanılıp filtreleme yapılarak şi
 
 go to apkpure.com
 Apk uygulamalarının eski versiyonlarını indirip tarama yapabiliriz.
-
+---------------------------------------------
 shodan:
 hostname:company.com product:"PostgreSQL"
-"windows server 2003" country:US port:445
-
+"windows server 2003" country:US port:445Example Filters
+Filter Use
+City Location city:london
+County Location county:gb
+Org Name org:google
+Host IP ip:192.168.1.1
+Service Port port:3389
+HTTP Title http.title:”hacked by”
+Product Name product:Samsung
+Operating System os:Windows
+Expired SSL Certificates ssl.cert.expired:true
+SSL Certificate Name Ssl.cert.subject.cn:google.com
+More Filters: https://www.shodan.io/search/filters
+Example Queries
+Devices With Default Password
+"default password"
+Windows Servers With RDP and Screenshots
+os:windows port:3389 has_screenshot:yes
+MySQL Servers In London
+country:gb city:london product:MySQL
+Hosts Owned By Google With Expired SSL Certificates
+org:google ssl.cert.expired:true
+Unprotected VNC
+"authentication disabled" "RFB 003.008"
+FTP Anonymous Login
+anonymous@ login ok. port:"21"
+SMB No Authentication
+port:"445" Authentication: "disabled"
+SMB No Authentication – Domain Controller
+"Authentication: disabled" NETLOGON SYSVOL -unix port:445
+Cisco No Authentication
+"This feature requires the one-time use of the username "cisco" with
+the password "cisco""
+HP Printers
+"Serial Number:" "Built:" "Server: HP HTTP"
+Xerox Printers
+"SERVER: EPSON_Linux UPnP" "200 OK"
+"Server: EPSON-HTTP" "200 OK"
+Shodan Cheat Sheet
+Disclaimer – This cheat sheet was created to help people with exams. It is not for the
+purposes of hacking public infrastructure.
+Ethereum Miners
+"ETH - Total speed"
+Misconfigured WordPress Files
+http.html:"* The wp-config.php creation script uses this file"
+Cameras With Screenshots
+webcam has_screenshot:true
+------------------------------
 pastebin:
 free database...
+
+
+--------------------------------
