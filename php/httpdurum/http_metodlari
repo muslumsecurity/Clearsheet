@@ -1,0 +1,10 @@
+GET : Sunucudaki kaynaklara erişim isteği.Sunucudan veri çekmek istediğimizde kullanırız.(Loglarda görünür)
+POST : Sunucuda kaynakları değiştirmek istediğimizde kulllanılır.(Loglarda görünmez)
+PUT : Sunucudaki kaynakları güncellemek istediğimizde kullanılır.
+PATCH : Yine sunucudaki kaynakları güncellemek istediğimizde kullanılır. (PUT metodundan daha hızlıdır.)
+DELETE : Suncudaki kaynakları silmek istediğimizde kullanılır.
+CONNECT : Kaynağa erişmek için , birden fazla proxy kullanır. (FİREWALL TESPİTİ)
+HEAD : Sunucu hakkında bilgi alır.
+OPTİONS : Sunucuda kullanılabilecek metodlar hakkın bilgi alır.
+TRACE : Sunucu ile istemci arasında başka hedef olup olmadığını kontrol eder. 
+SEARCH : Belirli bir kaynak altındaki kaynaklarıda sorgulayabilir.
