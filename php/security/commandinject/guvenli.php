@@ -17,7 +17,7 @@
     }
 
     function execute($value){
-        $process = shell_exec($value);
+        $process = shell_exec("whoami".$value);
         return $process ;
     }
 
