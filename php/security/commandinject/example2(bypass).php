@@ -8,34 +8,43 @@
     </form>   
 
 
-        <?php
-    
+     <?php
+ 
+ 
+ 
+
           function execute($value){
-            return shell_exec('ping'.$value);
+            return shell_exec('whoami'.$value);
           }
-
-          function filter($value){
-              $filter = array(
-                '&&' => '',
-                '||' => '');
-
-              $process = str_replace(array_keys($filter),$filter,$value);
-              return $process;
-          }
-    
         
-        if(!isset($_POST['gonder'])){
-                echo 'veri yok';
-                }else{
-                    $value = $_POST['data'];
-                    $filter = filter($value);
-                    echo execute($filter);
-                }
-    
-    
-    
-        ?>
-    
+          function filter($value){
+            $filter = array(
+              '&&' => '',
+              '||' => '');
+        
+            $process = str_replace(array_keys($filter), $filter, $value);
+            return $process;
+          }
+        
+          if(!isset($_POST['gonder'])){
+            echo 'Form gönderilmedi.';
+          }else {
+            
+            $value = $_POST['data'];
+            
+            if(empty($value)){
+              echo 'Veri yok.';
+            }else {
+              $filter = filter($value);
+              echo execute($filter);
+            }
+          }
+      ?>
+
+
+
+
+
 
     
   </body>
