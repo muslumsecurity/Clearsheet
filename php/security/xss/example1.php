@@ -20,7 +20,7 @@
   if(!isset($_POST['button'])){
     echo 'form boş';
   }else{
-    if(empty($data)){
+    if(empty($_POST['data'])){
       echo 'veri yok';
     }else{
       $value = $_POST['data'];
