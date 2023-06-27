@@ -12,19 +12,19 @@
   <?php
 
   function ekranabastir($vlaue){
-      echo $value;
+      echo $value; // direk ekrana bastırıyor. xss zafiyeti
   }
 
 
 
-  if(!isset($_POST['button'])){
+  if(!isset($_POST['button'])){ // formun gönderilip gönderilmediğine bakıyor.
     echo 'form boş';
   }else{
-    if(empty($_POST['data'])){
+    if(empty($_POST['data'])){ // formun doldurulup doldurulmadığına bakıyor.
       echo 'veri yok';
     }else{
-      $value = $_POST['data'];
-      ekranabastir($value);
+      $value = $_POST['data']; // değişkeni $value değişkeni içerisine atıyor.
+      ekranabastir($value); // Kullanıcıdan gelen girdiyi ekranabastir fonksiyonu içerisinde ekrana bastırıyor.
     }
   }
 
