@@ -29,8 +29,10 @@
         
           $value = $_POST['data'];
           $filter = filter($value); // temizle
+         
+          echo '<pre>';
           echo execute($filter);
-          
+          echo '</pre>';
       }
 
 
