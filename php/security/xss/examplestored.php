@@ -14,11 +14,12 @@
 
 
       function databaseyazdir($value){
+              $db = new PDO("mysql:host=localhost;dbname=htmlinj","root","password");  
               $sqlquery = "INSERT INTO walling ('wall') VALUES ('$value')";
       }
       
 
-        $db = new PDO("mysql:host=localhost;dbname=htmlinj","root","password");
+        
 
 // --------------------------------- ekleme kısmı ----------------------
         if(!isset($_POST['gonder'])){
