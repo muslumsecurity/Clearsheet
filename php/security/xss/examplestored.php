@@ -12,6 +12,10 @@
 
     <?php 
 
+
+      function databaseyazdir($value){
+              $sqlquery = "INSERT INTO walling ('wall') VALUES ('$value')";
+      }
       
 
         $db = new PDO("mysql:host=localhost;dbname=htmlinj","root","password");
@@ -24,7 +28,7 @@
               echo 'birşeyler yazın';
             }else{
               $value = $_POST['data'];
-              $sqlquery = "INSERT INTO walling ('wall') VALUES ('$value')";
+              databaseyazdir($value);
             }
             
         }
