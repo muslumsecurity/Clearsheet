@@ -11,7 +11,7 @@
   <?php
 
     function filter($value){
-        $process = escapeshellcmd(); // escapeshellcmd gelen veriyi temizliyor.
+        $process = escapeshellcmd($value); // escapeshellcmd gelen veriyi temizliyor.
         return $process;
       
     }
