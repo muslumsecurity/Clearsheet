@@ -1,25 +1,23 @@
------------------------------------------------------- VERİTABANI İŞLEMLERİ ----------------------------------------------------------------------------------
-SHOW DATABASES; // databaseleri göster
-CREATE DATABASE database name; // name adında database oluştur.
-DROP DATABASE database name; // name adındaki database siler.
-USE name; // name adındaki veritabanı seçilir.
 
------------------------------------------------------- TABLO İŞLEMLERİ -----------------------------------------------------------------------------------------
-CREATE TABLE parti (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
- isim VARCHAR(20),
- yiyecek VARCHAR(30),
- onaylandi CHAR(1),
- kayit_tarihi DATE);  // Veritabanı içerisinde yeni bir tablo oluşturur ve sütunlarını belirler.
-SHOW tables; // name adındaki veritabanının tablolarını görüntüler.
-INSERT INTO `parti` (`id`,`isim`,`yiyecek`,`onaylandi`,`kayit_tarihi`) VALUES (NULL, "Ali", "Ayran","Y", '2016-01-01'); // Tabloya yeni bir şeyler eklemek istersek insert komutunu kullanırız.
-SELECT * FROM parti; // parti tablosu içerisinde ki verileri gösterir.
-UPDATE `parti`  SET  `onaylandi` = 'Y'  WHERE `parti`.`name` ='Derya'; // parti tablosu içerisindeki name sütunun
-DELETE from [tablo adı] where [sütun adı]=[satır]; // Eğer tablonuzadan bir satır silmeniz gerekiyorsa ÖRNEK :  DELETE from parti where isim='Derya';
+Evet, MySQL veritabanı ile ilgili temel komutları ve işlemleri ve bunların kullanım örneklerini aşağıda bulabilirsiniz:
 
-DESCRIBE parti; // Parti tablosunun sütunlarının tamamını gösterir.
+Veritabanı İşlemleri:
 
------------------------------------------------ SÜTUN İŞLEMLERİ ---------------------------------------------------------------------------------------------------
-ALTER TABLE parti ADD e-posta VARCHAR(40); // Sütun eklemek istersek 
-ALTER TABLE parti ADD e-posta VARCHAR(40) AFTER isim; // İki sütun arasına bir yere sütun eklemek istersek bu kodu kullanırız. Bu komutla isim sütununu tablomuzda e-posta sütunundan sonra oluşturduk.
-ALTER TABLE parti DROP e-posta; // sütunu silmek için
--------------------------------------------------
+SHOW DATABASES; - Sunucuda bulunan tüm veritabanlarının listesini döndürür.
+CREATE DATABASE demo; - demo adında yeni bir veritabanı oluşturur.
+DROP DATABASE demo; - demo adındaki veritabanını siler.
+USE demo; - İşlemler için demo adındaki veritabanını seçer.
+Tablo İşlemleri:
+
+CREATE TABLE users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, username VARCHAR(50), password VARCHAR(50)); - users adında, id, username ve password sütunları olan bir tablo oluşturur.
+SHOW TABLES; - Seçili veritabanındaki tüm tabloları döndürür.
+INSERT INTO users (username, password) VALUES ('example', 'password'); - users tablosuna yeni bir satır ekler.
+SELECT * FROM users; - users tablosundaki tüm satırları ve sütunları döndürür.
+UPDATE users SET password = 'newpassword' WHERE username = 'example'; - users tablosunda, username'i 'example' olan satırın password sütununu günceller.
+DELETE FROM users WHERE username = 'example'; - users tablosunda, username'i 'example' olan satırı siler.
+DESCRIBE users; - users tablosunun sütunları hakkında bilgi verir.
+Sütun İşlemleri:
+
+ALTER TABLE users ADD email VARCHAR(50); - users tablosuna email adında yeni bir sütun ekler.
+ALTER TABLE users ADD email VARCHAR(50) AFTER username; - users tablosuna, username sütunundan hemen sonra email adında yeni bir sütun ekler.
+ALTER TABLE users DROP email; - users tablosundan email sütununu siler.
