@@ -25,6 +25,7 @@
             }else{
               $value = $_POST['data'];
               $sqlquery = "INSERT INTO walling ('wall') VALUES ('$value')";
+              $db ->query($sqlquery);
             }
             
         }
