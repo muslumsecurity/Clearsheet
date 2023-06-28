@@ -1,61 +1,42 @@
-
 <html>
-<head></head>
+  <head></head>
   <body>
 
-    <center>
-    <h1> YORUM KUTUSU </h1>
-    <form action="" method="get">
-      <textarea cols="40" rows="4" name= "data"></textarea>
-      <input type="submit" value="paylas" name="share"/>
+    <?php
+    
+     function insert_db($value){
+       $pdo = new PDO('mysql:host=localhost;dbname=hack', 'root', 'root'); 
+       $sql  = "INSERT INTO htmlinjection (wall) VALUES ('".$value."')";
+       $pdo->query($sql);
+        }
+
+     function list_details(){
+         $pdo = new PDO('mysql:host=localhost;dbname=hack', 'root', 'root');
+         $sql = "SELECT * FROM htmlinjection";
+        
+        foreach ($pdo->query($sql) as $row) {
+           return $row['wall'];
+           }
+          }
+
+     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if(isset($_POST['data'])){
+          $value = $_POST['data'];
+          insert_db($value);
+          }
+         }
+     ?>
+
+    <form action="" method="post">
+      <input type="text" name="data">
+      <input type="submit" value="gonder">
     </form>
 
-    <?php 
+    <center>
+    <h1>wall</h1>
+    <?php list_details();?>
+    </center>
 
 
-      function databaseyazdir($value){
-              $db = new PDO("mysql:host=localhost;dbname=htmlinj","root","password");  
-              $sqlquery = "INSERT INTO walling ('wall') VALUES ('$value')";
-      }
-      
-
-        
-
-// --------------------------------- ekleme kısmı ----------------------
-        if(!isset($_POST['gonder'])){
-              echo 'form gönderilemedi';          
-        }else{
-            if(empty($_POST['data'])){
-              echo 'birşeyler yazın';
-            }else{
-              $value = $_POST['data'];
-              databaseyazdir($value);
-            }
-            
-        }
-
-
-// --------------------- listeleme kısmı --------------------------
-       $list = 'SELECT * FROM comment';
-       $run = db->query($list);
-
-      echo "<center> <h1> YORUMLAR <h1></center>";
-      if(!$run){
-        echo 'Listeleme gerçekeleştirilemiyor.';
-      }else{
-        foreach($run as $row){ ?>
-          <p>Yorum : <?php echo $row['wall']?></p>
-      <?php 
-        }
-      }
-
-
-    ?>
-
-  </center>  
-
-
-
-    
-  </body>
+    </body>
 </html>
