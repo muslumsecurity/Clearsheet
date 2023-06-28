@@ -1,57 +1,53 @@
-
 <html>
-<head></head>
-  <body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1>&copy; <span>Wa</span><span class="boxed">LL</span></h1>
+        </div>
+        <div id="content">
+            <form action="" method="post">
+                <textarea cols="40" rows="4" name="data"></textarea><br>
+                <input type="submit" value="Walling" name="share"/>
+            </form>
+            <span class="boxed"><h2>Walling</h2></span>
+            <?php 
+                error_reporting(E_ALL);
+                ini_set('display_errors', 1);
+                $pdo = new PDO('mysql:host=localhost;dbname=hack', 'root', 'root');
 
-    <center>
-    <h1> YORUM KUTUSU </h1>
-    <form action="" method="get">
-      <textarea cols="40" rows="4" name= "data"></textarea>
-      <input type="submit" value="paylas" name="share"/>
-    </form>
+                if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                    if(isset($_POST['share'])){
+                        $data = $_POST['data'];
+                        $sql = "INSERT INTO htmlinjection (id,wall) VALUES (NULL,'".$data."')";
+                        $pdo->query($sql);
+                    } elseif(isset($_POST['id'])){
+                        $delete = $_POST['id'];
+                        $sql = "DELETE FROM htmlinjection  where id=$delete";
+                        $pdo->query($sql); 	
+                    }
+                }
 
-    <?php 
-
-      
-
-        $db = new PDO("mysql:host=localhost;dbname=htmlinj","root","password");
-
-// --------------------------------- ekleme kısmı ----------------------
-        if(!isset($_POST['gonder'])){
-              echo 'form gönderilemedi';          
-        }else{
-            if(empty($_POST['data'])){
-              echo 'birşeyler yazın';
-            }else{
-              $value = $_POST['data'];
-              $sqlquery = "INSERT INTO walling ('wall') VALUES ('$value')";
-              $db ->query($sqlquery);
-            }
-            
-        }
-
-
-// --------------------- listeleme kısmı --------------------------
-       $list = 'SELECT * FROM comment';
-       $run = db->query($list);
-
-      echo "<center> <h1> YORUMLAR <h1></center>";
-      if(!$run){
-        echo 'Listeleme gerçekeleştirilemiyor.';
-      }else{
-        foreach($run as $row){ ?>
-          <p>Yorum : <?php echo $row['wall']?></p>
-      <?php 
-        }
-      }
-
-
-    ?>
-
-  </center>  
-
-
-
-    
-  </body>
+                $results_per_page = 5;
+                $sql = "SELECT * FROM htmlinjection";
+                $stmt = $pdo->query($sql);
+                $number_of_results = $stmt->rowCount();
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+                if (!isset($_GET['page'])) {
+                    $page = 1;
+                } else {
+                    $page = $_GET['page'];
+                }
+                $this_page_first_result = ($page - 1) * $results_per_page;
+                $sql = "SELECT * FROM htmlinjection LIMIT " . $this_page_first_result . ',' .  $results_per_page;
+                foreach($pdo->query($sql) as $row){
+                    echo "<li>{$row['id']}.{$row['wall']}<form action='' method='post'><input type='hidden' value={$row['id']} name='id'><input type='submit' value='sil'></form></li>";
+                }
+                for ($page = 1; $page <= $number_of_pages; $page++) {
+                    echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
+                }
+            ?>
+        </div>
+    </body>
 </html>
