@@ -1,15 +1,27 @@
-Eğer dosyaları bir web sitesinden yüklemek istiyorsanız, Invoke-WebRequest komutunu kullanabilirsiniz:
-Invoke-WebRequest -Uri http://websitename.com/file.txt -OutFile C:\destination\file.txt
+Windows'ta %TEMP% ortam değişkeni, geçici dosyaların genellikle depolandığı dizini temsil eder. Dolayısıyla, belirli bir dosyayı geçici klasöre indirmek için PowerShell'da aşağıdaki komutları kullanabilirsiniz:
 
-Eğer dosyaları bir FTP sitesinden yüklemek istiyorsanız, .NET Framework'ün WebClient sınıfını kullanabilirsiniz:
+Invoke-WebRequest komutu ile:
+Invoke-WebRequest -Uri http://websitename.com/file.txt -OutFile $env:TEMP\file.txt
+
+---------------------------------------------------------------------------
+
+.NET Framework'ün System.Net.WebClient sınıfını kullanarak:
 $webclient = New-Object System.Net.WebClient
-$webclient.Credentials = New-Object System.Net.NetworkCredential("username", "password")
-$webclient.DownloadFile("ftp://ftpserver.com/file.txt", "C:\destination\file.txt")
-Yukarıdaki örneklerdeki "C:\source\file.txt", "C:\destination\file.txt", "http://websitename.com/file.txt" ve "ftp://ftpserver.com/file.txt" yerlerine kendi yollarınızı ve dosya isimlerinizi girin. Aynı şekilde, FTP örneğindeki "username" ve "password" yerine FTP hesabınızın kullanıcı adını ve şifresini girin.
+$webclient.DownloadFile("http://websitename.com/file.txt", "$env:TEMP\file.txt")
 
-.NET Framework'ün System.Net.WebClient sınıfını kullanmak:
+--------------------------------------------------------------------------
+
+FTP (File Transfer Protocol) ile dosya indirmek için PowerShell'da .NET Framework'ün System.Net.WebClient sınıfını kullanabilirsiniz. İşte bir örnek:
 $webclient = New-Object System.Net.WebClient
-$webclient.DownloadFile("http://websitename.com/file.txt", "C:\destination\file.txt")
+$webclient.Credentials = New-Object System.Net.NetworkCredential("username", "password") # FTP kullanıcı adı ve şifresi
+$webclient.DownloadFile("ftp://ftpserver.com/file.txt", "$env:TEMP\file.txt")
 
-Certutil: 
-certutil -urlcache -split -f "http://websitename.com/file.txt" C:\destination\file.txt
+--------------------------------------------------------------------------
+certutil komutu ile:
+certutil -urlcache -split -f "http://websitename.com/file.txt" $env:TEMP\file.txt
+
+
+**Yukarıdaki komutlarda http://websitename.com/file.txt yerine indirmek istediğiniz dosyanın URL'sini, file.txt yerine ise indirilen dosyanın ismini yazınız. $env:TEMP\file.txt kısmı, 
+dosyanın geçici klasöre (genellikle C:\Users\YourUsername\AppData\Local\Temp\ olur) indirileceğini belirtir.
+
+
