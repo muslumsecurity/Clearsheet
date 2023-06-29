@@ -1,0 +1,15 @@
+Eğer dosyaları bir web sitesinden yüklemek istiyorsanız, Invoke-WebRequest komutunu kullanabilirsiniz:
+Invoke-WebRequest -Uri http://websitename.com/file.txt -OutFile C:\destination\file.txt
+
+Eğer dosyaları bir FTP sitesinden yüklemek istiyorsanız, .NET Framework'ün WebClient sınıfını kullanabilirsiniz:
+$webclient = New-Object System.Net.WebClient
+$webclient.Credentials = New-Object System.Net.NetworkCredential("username", "password")
+$webclient.DownloadFile("ftp://ftpserver.com/file.txt", "C:\destination\file.txt")
+Yukarıdaki örneklerdeki "C:\source\file.txt", "C:\destination\file.txt", "http://websitename.com/file.txt" ve "ftp://ftpserver.com/file.txt" yerlerine kendi yollarınızı ve dosya isimlerinizi girin. Aynı şekilde, FTP örneğindeki "username" ve "password" yerine FTP hesabınızın kullanıcı adını ve şifresini girin.
+
+.NET Framework'ün System.Net.WebClient sınıfını kullanmak:
+$webclient = New-Object System.Net.WebClient
+$webclient.DownloadFile("http://websitename.com/file.txt", "C:\destination\file.txt")
+
+Certutil: 
+certutil -urlcache -split -f "http://websitename.com/file.txt" C:\destination\file.txt
