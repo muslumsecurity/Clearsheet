@@ -66,3 +66,55 @@ Insecure Deserialization: PHP'de güvensiz deserialization'ı önlemek için uns
 // Using JSON as a safer alternative to unserialize()
 $safe_data = json_encode($data);
 $restored_data = json_decode($safe_data);
+
+Server Side Request Forgery (SSRF): SSRF saldırılarını önlemek için sunucu tarafında yapılan isteklerin girdi değerlerini kontrol edin ve URL'leri filtreleyin:
+// Make sure you only connect to known hosts
+$allowed_hosts = ['www.example.com', 'api.example.com'];
+$url = parse_url($_GET['url']);
+if (!in_array($url['host'], $allowed_hosts)) {
+    die("Invalid URL");
+}
+
+Path Traversal: Kullanıcının gönderdiği dosya yollarını kontrol edin ve dosya yolu manipülasyonlarını önlemek için uygun işlevler kullanın:
+$filename = basename($_GET['filename']); // Only allow simple filenames without any directory parts
+$path = '/safe/path/' . $filename;
+if (!file_exists($path)) {
+    die("File not found");
+}
+
+Header Injection: Kullanıcı girişlerini headerlarda kullanırken temizlemek önemlidir:
+$user_agent = str_replace(["\n","\r"], '', $_SERVER['HTTP_USER_AGENT']);
+header("User-Agent: $user_agent");
+
+Clickjacking (User Interface redress attack): Clickjacking saldırılarını önlemek için X-Frame-Options başlığını kullanabiliriz:
+header('X-Frame-Options: DENY');
+
+
+HTTP Verb Tampering: HTTP istek metodunu kontrol ederek POST, DELETE gibi metotları kullanıcı girişine göre ayarlamaktan kaçınabiliriz:
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    exit;
+}
+
+HTTP Parameter Pollution (HPP): Tekil parametreler kullanarak HPP saldırılarından korunabiliriz:
+// $_GET['id'] will only ever return the first 'id' query parameter
+$id = $_GET['id'];
+
+
+Missing Encryption of Sensitive Data: Hassas verileri şifreleyin:
+// Example of password hashing
+$password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+Insufficient Logging & Monitoring: Olayların yeterli bir şekilde kaydedilip izlenmediği durumlarda, bir saldırı meydana geldiğinde anlaşılmaz veya belirlenemez. PHP'de error_log işlevi, hataları ve istisnaları kaydetmek için kullanılabilir:
+error_log('Error or exception message');
+
+Sensitive Data Exposure: Sensitive data'ya (hassas veri) karşı koruma önemlidir. Bu, veritabanı bağlantı bilgileri, ödeme bilgileri veya kullanıcı bilgileri gibi bilgileri içerebilir. Bu tür bilgileri bir dosyada saklamak yerine bir ortam değişkeninde saklamak daha güvenlidir. PHP'de getenv fonksiyonunu kullanabilirsiniz:
+$db_password = getenv('DB_PASSWORD');
+
+Insufficient Session Expiration: Oturumların zamanında sona ermemesi, saldırganların kullanıcının oturumunu ele geçirme riskini artırabilir. Oturum süresini belirlemek için session.cookie_lifetime ayarını kullanabilirsiniz:
+ini_set('session.cookie_lifetime', 600); // Set session expiration to 10 minutes
+
+Unvalidated Redirects and Forwards: Redirect ve forward işlemleri sırasında kullanıcı girişlerini doğrulamamak saldırılara yol açabilir. Kullanıcıdan gelen URL'ler için doğrulama yapılması gereklidir:
+$allowed_urls = ['https://www.yourwebsite.com', 'https://yourwebsite.com/login'];
+if (!in_array($_GET['redirect'], $allowed_urls)) {
+    die('Invalid redirect URL');
+}
