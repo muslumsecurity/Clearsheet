@@ -1,3 +1,9 @@
-# 1. Başlık
-## 2. Alt Başlık
-### 3. Alt Başlık
+| Zaafiyetler | Zaafiyet Açıklamaları | Zaafiyetli Kod Örneği | Önleme Fonksiyonları / İşlemler | Önlenmiş Kod Örneği |
+| --- | --- | --- | --- | --- |
+| OS Command Injection | Saldırganın sunucuda işletim sistemi komutlarını çalıştırabilmesi. | `$output = shell_exec("cat " . $_GET['filename']);` | escapeshellarg() veya escapeshellcmd() | `$userInput = $_GET['filename']; $escapedInput = escapeshellarg($userInput); $output = shell_exec("cat " . $escapedInput);` |
+| SQL Injection | Saldırganın SQL sorgularını manipüle edebilmesi. | `$stmt = $pdo->prepare('SELECT * FROM users WHERE email = ' . $_POST['email']);` | PDO::prepare() ve PDOStatement::bindParam() | `$stmt = $pdo->prepare('SELECT * FROM users WHERE email = ?'); $stmt->execute([$_POST['email']]);` |
+| Cross-Site Scripting (XSS) | Saldırganın kullanıcı tarayıcısında keyfi JavaScript kodlarını çalıştırabilmesi. | `echo "Hello, " . $_POST['username'];` | htmlspecialchars() | `$userInput = $_POST['username']; $safeInput = htmlspecialchars($userInput, ENT_QUOTES, 'UTF-8'); echo "Hello, " . $safeInput;` |
+| Local File Inclusion (LFI) | Saldırganın sunucuda keyfi dosyaları okuyabilmesi. | `include($_GET['filename'] . ".php");` | in_array() | `$allowed_pages = ['home', 'about', 'contact']; $page = $_GET['page']; if (!in_array($page, $allowed_pages)) { die("Not allowed"); } include($page . ".php");` |
+| Remote File Inclusion (RFI) | Saldırganın sunucuda dış kaynaklardan dosyaları dahil edebilmesi. | `include($_GET['filename'] . ".php");` | PHP .ini dosyasında allow_url_include ayarını Off olarak ayarlamak. | PHP .ini dosyasında allow_url_include ayarını Off olarak ayarlayın. |
+| Unrestricted File Upload | Saldırganın sunucuya zararlı dosyalar yükleyebilmesi. | `move_uploaded_file($_FILES['userfile']['tmp_name'], '/path/' . $_FILES['userfile']['name']);` | pathinfo() ve in_array() | `$allowedExtensions = ['jpg', 'png', 'gif']; $fileName = $_FILES['userfile']['name']; $ext = pathinfo($fileName, PATHINFO_EXTENSION); if (!in_array($ext, $allowedExtensions)) { die("Not allowed file extension"); } move_uploaded_file($_FILES['userfile']['tmp_name'], '/safe/path/' . $fileName);` |
+| Broken Authentication | Saldırganın yetkisiz şekilde başka bir kullanıcının oturumuna girebilmesi. | `$hashed_password = md5($_POST['password']);` | password_hash() ve password_verify() | `$hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Save the hashed password into database
