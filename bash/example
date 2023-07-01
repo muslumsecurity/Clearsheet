@@ -1,0 +1,117 @@
+Bir dosya üzerinde döngü oluşturma:
+#!/bin/bash
+
+# file.txt dosyasındaki her satırı döngüyle geçerek ekrana yazdırır
+for line in $(cat file.txt); do
+    echo $line
+done
+
+Diğer bir yöntem:
+#!/bin/bash
+# while döngüsü kullanarak file.txt dosyasındaki her satırı ekrana yazdırır
+while read -r line; do
+    echo $line
+done < file.txt
+---------------------------------------------------
+
+for döngüsü:
+#!/bin/bash
+
+# 1'den 100'e kadar olan sayıları ekrana yazdırır
+for x in {1..100}; do
+    echo $x
+done
+
+Başka bir yöntem:
+#!/bin/bash
+
+# seq programını kullanarak 1'den 100'e kadar olan sayıları ekrana yazdırır
+for x in $(seq 1 100); do
+    echo $x
+done
+
+---------------------------------------------------
+if ifadesi:
+#!/bin/bash
+# $1 burada birinci argümanı temsil eder
+# Eğer birinci argüman boş ise, "Bu gerçekleşir" mesajını ekrana yazdırır
+if [ "$1" == "" ]; then
+    echo "Bu gerçekleşir"
+fi
+
+Başka bir örnek:
+#!/bin/bash
+# $1 burada birinci argümanı temsil eder
+# Eğer birinci argüman "hello" ise, "Merhaba Dünya!" mesajını ekrana yazdırır
+if [ "$1" == "hello" ]; then
+    echo "Merhaba Dünya!"
+fi
+
+---------------------------------------------------
+if/else ifadesi:
+#!/bin/bash
+# $1 burada birinci argümanı temsil eder
+# Eğer birinci argüman boş ise, "Bu gerçekleşir" mesajını ekrana yazdırır, aksi durumda "Başka bir şey gerçekleşir" mesajını yazdırır
+if [ "$1" == "" ]; then
+    echo "Bu gerçekleşir"
+else
+    echo "Başka bir şey gerçekleşir"
+fi
+
+Başka bir örnek:
+#!/bin/bash
+# $1 burada birinci argümanı temsil eder
+# Eğer birinci argüman "morning" ise, "Günaydın!" mesajını ekrana yazdırır, aksi durumda "İyi günler!" mesajını yazdırır
+if [ "$1" == "morning" ]; then
+    echo "Günaydın!"
+else
+    echo "İyi günler!"
+fi
+---------------------------------------------------
+Komut satırı argümanları:
+#!/bin/bash
+
+# İlk komut satırı argümanını ekrana yazdırır
+echo "İlk argüman: $1"
+
+Başka bir örnek:
+#!/bin/bash
+
+# İkinci komut satırı argümanını ekrana yazdırır
+echo "İkinci argüman: $2"
+---------------------------------------------------
+Bir işlemi arkaplanda çalıştırma:
+#!/bin/bash
+
+# ips.txt dosyasındaki her bir IP adresine ping gönderir
+# Her bir ping işlemini arkaplanda çalıştırarak daha hızlı bir şekilde tamamlar
+for ip in $(cat ips.txt); do
+    ping -c 1 $ip &
+done
+Başka bir örnek:
+#!/bin/bash
+
+# files.txt dosyasındaki her bir dosyayı kopyalar
+# Her bir kopyalama işlemini arkaplanda çalıştırarak daha hızlı bir şekilde tamamlar
+for file in $(cat files.txt); do
+    cp $file /destination/path/ &
+done
+
+---------------------------------------------------
+Bir komutun çıktısını kullanma:
+#!/bin/bash
+
+# 646.c dosyasını arar ve son satırı, yani dosya yolunu ekrana yazdırır
+file_path=$(locate 646.c | tail -n 1)
+echo "Dosya yolu: $file_path"
+
+# Bulunan dosyayı cat komutuyla ekrana yazdırır
+cat $file_path
+
+Başka bir örnek:
+
+#!/bin/bash
+
+# ls komutunu kullanarak belirli bir dizindeki dosyaları listeler
+# Ardından listelenen dosyaları grep komutuyla filtreler ve sadece belirli bir örüntüye sahip dosyaları ekrana yazdırır
+ls /path/to/directory | grep "pattern"
