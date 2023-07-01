@@ -11,3 +11,23 @@ Dosyanın okuma iznini ayarlamak için: chmod u+r file.txt
 Dosyanın yazma iznini ayarlamak için: chmod u+w file.txt
 Dosyanın çalıştırma iznini ayarlamak için: chmod u+x file.txt
 
+
+Linux izinlerindeki sayısal değerlerin her bir hanesi belirli bir kullanıcı grubunu veya izin türünü temsil eder. İşte Linux izinlerindeki sayısal değerlerin anlamları:
+
+İlk hane (sol taraftaki rakam): İzinlerin sahibi kullanıcıya aittir.
+Orta hane (orta taraftaki rakam): İzinlerin sahip olduğu grupla ilişkilidir.
+Son hane (sağ taraftaki rakam): Diğer (others) kullanıcılar için olan izinleri temsil eder.
+Örneğin, 755 izni için:
+
+İlk hane (7): İzinlerin sahibi kullanıcı için geçerlidir. Bu kullanıcı, dosya veya dizinin sahibi ve bu izinler ona aittir.
+Orta hane (5): İzinlerin sahip olduğu grup için geçerlidir. Bu, dosya veya dizini paylaşan kullanıcıların ait olduğu gruptur.
+Son hane (5): Diğer (others) kullanıcılar için geçerlidir. Bu, dosyayı veya dizini erişebilen diğer kullanıcıları temsil eder.
+Benzer şekilde, 777 izni için:
+
+İlk hane (7): İzinlerin sahibi kullanıcı için geçerlidir. Bu kullanıcı, dosya veya dizinin sahibi ve bu izinler ona aittir.
+Orta hane (7): İzinlerin sahip olduğu grup için geçerlidir. Bu, dosya veya dizini paylaşan kullanıcıların ait olduğu gruptur.
+Son hane (7): Diğer (others) kullanıcılar için geçerlidir. Bu, dosyayı veya dizini erişebilen diğer kullanıcıları temsil eder.
+Bu sayısal değerler, dosyaların ve dizinlerin izinlerinin kimler tarafından kontrol edildiğini belirtir. 
+İzinlerin sahibi kullanıcı (user) için olan hane, dosyanın sahibi tarafından kullanılırken, 
+izinlerin sahip olduğu grup için olan hane, dosyanın paylaşıldığı grup üyeleri tarafından kullanılır.
+Son hane ise diğer kullanıcılar için geçerlidir, yani dosyanın veya dizinin dışındaki kullanıcılar için.
