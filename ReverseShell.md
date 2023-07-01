@@ -69,4 +69,4 @@ You’ll need to authorise the target to connect to you (command also run on you
 
 xhost +targetip
 
-![example][reversebind.png]
+![example][/reversebind.png]
