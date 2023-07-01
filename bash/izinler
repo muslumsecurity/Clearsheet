@@ -31,3 +31,27 @@ Bu sayısal değerler, dosyaların ve dizinlerin izinlerinin kimler tarafından 
 İzinlerin sahibi kullanıcı (user) için olan hane, dosyanın sahibi tarafından kullanılırken, 
 izinlerin sahip olduğu grup için olan hane, dosyanın paylaşıldığı grup üyeleri tarafından kullanılır.
 Son hane ise diğer kullanıcılar için geçerlidir, yani dosyanın veya dizinin dışındaki kullanıcılar için.
+
+
+Linux izinlerini sembolik olarak ifade etmek için semboller ve sembolik ifadeler kullanılır. İşte sembolik izin ifadeleri:
+
+r (read): Okuma izni. Dosya içeriğini veya dizin içeriğini okuma yetkisini temsil eder.
+w (write): Yazma izni. Dosyaya veya dizine içerik ekleme, düzenleme veya silme yetkisini temsil eder.
+x (execute): Çalıştırma izni. Dosya veya dizini çalıştırabilme yetkisini temsil eder.
+Ayrıca sembolik ifadelerle birlikte kullanılan bazı semboller de vardır:
+
+u (user): İzinlerin sahibi kullanıcıyı temsil eder.
+g (group): İzinlerin sahip olduğu grubu temsil eder.
+o (others): Diğer kullanıcıları temsil eder.
+a (all): Tüm kullanıcıları temsil eder (user, group ve others'ı kapsar).
+Bu sembollerle birlikte izinleri sembolik olarak ifade edebiliriz. Örneğin:
+
+rwx : Okuma, yazma ve çalıştırma izinlerini ifade eder.
+rw- : Okuma ve yazma izinlerini ifade eder, ancak çalıştırma izni yoktur.
+r-x : Okuma ve çalıştırma izinlerini ifade eder, ancak yazma izni yoktur.
+Sembolik ifadeleri kullanarak izinleri ayarlamak için chmod komutunu kullanabiliriz. Örneğin:
+
+chmod u+rwx file.txt : Dosyaya sahibi kullanıcıya okuma, yazma ve çalıştırma izinlerini verir.
+chmod g-wx directory/ : Dizinden grup üyelerinin yazma ve çalıştırma iznini kaldırır.
+chmod o+r file.txt : Dosyayı diğer kullanıcılara sadece okunabilir hale getirir.
+Bu sembolik ifadeler, izinleri daha okunabilir ve anlaşılır bir şekilde ifade etmek için kullanılır
