@@ -1,6 +1,2 @@
 | Zaafiyetler | Zaafiyet Açıklamaları | Zaafiyetli Kod Örneği | Önleme Fonksiyonları / İşlemler | Önlenmiş Kod Örneği |
 | --- | --- | --- | --- | --- |
-| OS Command Injection | Saldırganın işletim sistemi komutlarını uygulamaya enjekte edebilmesi. | `$output = shell_exec("cat " . $userInput);` | `escapeshellarg()` fonksiyonu | `$escapedInput = escapeshellarg($userInput); $output = shell_exec("cat " . $escapedInput);` |
-| SQL Injection | Saldırganın SQL sorgularını manipüle ederek veritabanına erişebilmesi. | `$stmt = $pdo->prepare('SELECT * FROM users WHERE email = ' . $_POST['email']);` | Hazırlanmış ifadeler (Prepared Statements) | `$stmt = $pdo->prepare('SELECT * FROM users WHERE email = ?'); $stmt->execute([$_POST['email']]);` |
-| ... | ... | ... | ... | ... |
-
