@@ -68,3 +68,5 @@ Xnest :1
 You’ll need to authorise the target to connect to you (command also run on your host):
 
 xhost +targetip
+
+![example][reversebind.png]
