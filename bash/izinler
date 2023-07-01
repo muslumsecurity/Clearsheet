@@ -1,0 +1,13 @@
+Okuma (Read): 4
+Yazma (Write): 2
+Çalıştırma (Execute): 1
+
+
+Okuma, yazma ve çalıştırma izinlerine sahip bir dosyanın izinleri rwx veya 7 olarak ifade edilebilir.
+
+
+
+Dosyanın okuma iznini ayarlamak için: chmod u+r file.txt
+Dosyanın yazma iznini ayarlamak için: chmod u+w file.txt
+Dosyanın çalıştırma iznini ayarlamak için: chmod u+x file.txt
+
