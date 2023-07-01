@@ -1,3 +1,16 @@
+#!/bin/bash
+
+# Kullanıcıdan isim girmesini isteyen bir mesaj yazdırılır
+echo "Lütfen isminizi girin:"
+
+# Kullanıcıdan girdi alınır ve `name` değişkenine atanır
+read name
+
+# Kullanıcının girdiği isim ekrana yazdırılır
+echo "Merhaba, $name!"
+
+------------------------------------------------
+
 Bir dosya üzerinde döngü oluşturma:
 #!/bin/bash
 
