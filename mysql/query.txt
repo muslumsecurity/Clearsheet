@@ -21,6 +21,8 @@ Sütun İşlemleri:
 ALTER TABLE users ADD email VARCHAR(50); - users tablosuna email adında yeni bir sütun ekler.
 ALTER TABLE users ADD email VARCHAR(50) AFTER username; - users tablosuna, username sütunundan hemen sonra email adında yeni bir sütun ekler.
 ALTER TABLE users DROP email; - users tablosundan email sütununu siler.
+MySQL
+ALTER TABLE ogrenci RENAME ogrenciler;
 
 Tüm Kayıtları Getirme:
 
