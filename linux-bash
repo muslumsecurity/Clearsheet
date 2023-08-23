@@ -1,1 +1,36 @@
-
+Komut	Açıklama	Örnek Kullanım
+ls	Dizin içeriğini listeler.	ls -l
+cd	Çalışma dizinini değiştirir.	cd /home/kullanici
+pwd	Mevcut dizini görüntüler.	pwd
+cp	Dosya veya dizinleri kopyalar.	cp dosya.txt hedef_dizin/
+mv	Dosya veya dizinleri taşır veya yeniden adlandırır.	mv eski_ad yeni_ad
+rm	Dosyaları veya dizinleri siler.	rm dosya.txt
+mkdir	Yeni dizin oluşturur.	mkdir yeni_dizin
+rmdir	Boş bir dizini siler.	rmdir bos_dizin
+touch	Yeni bir dosya oluşturur veya varolan dosyanın zaman damgasını günceller.	touch dosya.txt
+cat	Dosya içeriğini görüntüler veya birleştirir.	cat dosya.txt
+grep	Metin içinde desen arar.	grep "kelime" dosya.txt
+find	Dizinlerde dosya ve dizinleri bulur.	find /dizin -name "*.txt"
+chmod	Dosya izinlerini ayarlar.	chmod +x dosya.sh
+chown	Dosya sahibini ve grubunu değiştirir.	chown yeni_kullanici dosya.txt
+ps	Çalışan işlemleri listeler.	ps aux
+top	Sistemdeki işlemleri ve kaynak kullanımını izler.	top
+df	Dosya sistemi kullanımını görüntüler.	df -h
+du	Dizinlerin disk kullanımını görüntüler.	du -sh dizin
+wget	İnternet üzerinden dosya indirir.	wget URL
+curl	İnternet üzerinden veri alışverişi yapar.	curl -O URL
+ssh	Uzak sunucuya güvenli şekilde bağlanır.	ssh kullanici@uzak_sunucu
+scp	Uzak sunucuyla dosya kopyalar.	scp dosya.txt kullanici@uzak_sunucu:~
+tar	Arşiv dosyalarını yönetir.	tar -cvf arsiv.tar dosyalar/
+zip	Dosyaları sıkıştırır ve arşivler.	zip arsiv.zip dosyalar/
+unzip	Zip arşivini açar.	unzip arsiv.zip
+ping	Ağ cihazlarına ICMP ping gönderir.	ping google.com
+ifconfig	Ağ arabirimlerinin yapılandırmasını görüntüler.	ifconfig
+netstat	Ağ bağlantılarını ve istatistikleri görüntüler.	netstat -tuln
+psql	PostgreSQL veritabanı için etkileşimli terminal.	psql -U kullanici veritabani
+mysql	MySQL veritabanı için etkileşimli terminal.	mysql -u kullanici -p
+git	Sürüm kontrolü ve kod yönetimi araçları.	git clone repo_url
+apt-get	Debian tabanlı dağıtımlarda paket yönetimi.	apt-get install paket_adı
+yum	Red Hat tabanlı dağıtımlarda paket yönetimi.	yum install paket_adı
+systemctl	Systemd hizmet yönetimi.	systemctl start hizmet_adı
+journalctl	Systemd günlükleri görüntüler.	journalctl -u hizmet_adı
