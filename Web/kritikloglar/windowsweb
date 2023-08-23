@@ -1,0 +1,29 @@
+IIS (Internet Information Services) Sunucusu:
+
+Erişim Logları: C:\inetpub\logs\LogFiles\W3SVC#\u_exYYMMDD.log
+Hata Logları: C:\Windows\System32\LogFiles\HTTPERR\httperr.log
+ASP.NET ve .NET Uygulamaları:
+
+Uygulama Hata Logları: C:\Windows\Microsoft.NET\Framework64\<.NET Version>\Temporary ASP.NET Files
+PHP Hata Logları:
+
+PHP Hata Logları: C:\PHP\logs\php_error.log veya C:\Program Files (x86)\PHP\<Version>\logs\php_errors.log
+MySQL veya SQL Server Veritabanları:
+
+MySQL Hata Logları: C:\Program Files\MySQL\<Version>\Data\<hostname>.err
+SQL Server Hata Logları: SQL Server Management Studio'da görüntülenebilir.
+Etki Alanı Denetleyicisi (Domain Controller)
+
+Kritik Olay Günlüğü: C:\Windows\NTDS\Ntds.dit
+Remote Desktop Services:
+
+Bağlantı Logları: C:\Windows\System32\LogFiles\rdp\<RDP-Tcp#>.log
+Windows Güvenlik Olayları:
+
+Güvenlik Olay Günlüğü: C:\Windows\System32\winevt\Logs\Security.evtx
+Windows Uygulama Olayları:
+
+Uygulama Olay Günlüğü: C:\Windows\System32\winevt\Logs\Application.evtx
+Windows Sistem Olayları:
+
+Sistem Olay Günlüğü: C:\Windows\System32\winevt\Logs\System.evtx
