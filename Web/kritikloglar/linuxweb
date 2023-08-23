@@ -1,0 +1,36 @@
+Apache HTTP Sunucusu:
+
+Erişim Logları: /var/log/apache2/access.log
+Hata Logları: /var/log/apache2/error.log
+Nginx Web Sunucusu:
+
+Erişim Logları: /var/log/nginx/access.log
+Hata Logları: /var/log/nginx/error.log
+PHP Hata Logları:
+
+/var/log/php/errors.log veya /var/log/php.log
+MySQL veya PostgreSQL Veritabanları:
+
+MySQL Hata Logları: /var/log/mysql/error.log
+PostgreSQL Hata Logları: /var/log/postgresql/postgresql-<sürüm>_main.log
+SSH Giriş Denemeleri:
+
+/var/log/auth.log (Debian tabanlı sistemlerde)
+Sistem Güvenliği ve Uyum Kontrolü:
+
+/var/log/auth.log (Kullanıcı oturum açma ve yetkilendirme işlemleri)
+/var/log/secure (Genel sistem güvenliği)
+Firewall ve Ağ Güvenliği:
+
+/var/log/ufw.log (Uncomplicated Firewall logları)
+/var/log/audit/audit.log (Audit logları)
+Sistem Genel Logları:
+
+/var/log/syslog (Genel sistem logları)
+/var/log/messages (Önemli sistem mesajları)
+Sistem Başlangıç/Kapanış Logları:
+
+/var/log/boot.log (Sistem başlangıç logları)
+Cron İşleri:
+
+/var/log/cron.log veya /var/log/cron
