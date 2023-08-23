@@ -1,0 +1,36 @@
+Başarısız Oturum Denemesi (Event ID: 4625):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
+Kritik Sistem Hataları (Event ID: 41):
+
+Log Dosyası: C:\Windows\System32\winevt\Logs\System.evtx
+Hesap Kilitlenmesi (Event ID: 4740):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
+Hesap Oluşturma ve Silme (Event ID: 4720, 4726, 4724):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
+İşlem Başlatma (Event ID: 4688):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
+Erişim Reddi (Event ID: 5152, 5157, 4663):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
+Yüksek İşlem İzlemesi (Event ID: 4689):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
+Windows Güvenlik Duvarı Blokları (Event ID: 5152, 5157):
+
+Log Dosyası: C:\Windows\System32\LogFiles\Firewall\pfirewall.log
+Erişim Denetimi (Event ID: 4662, 4663):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
+Hesap Şifresi Değişiklikleri (Event ID: 4723, 4724):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
+Bilgisayar Başlatma/Kapanma (Event ID: 6005, 6006):
+
+Log Dosyası: C:\Windows\System32\winevt\Logs\System.evtx
+Kullanıcı Hesap Kilit Açma (Event ID: 4624):
+
+Log Dosyası: C:\Windows\Security\Logs\Security.evtx
