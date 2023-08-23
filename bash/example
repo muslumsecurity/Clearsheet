@@ -37,7 +37,7 @@ done
 
 #!/bin/bash
 
-# 1'den 100'e kadar olan sayıları 3 ekrana yazdır ekrana yazdırır
+# 1'den 100'e kadar olan sayıları 3'er ekrana yazdır ekrana yazdırır
 for x in {1..100..3}; do
     echo $x
 done
