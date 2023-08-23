@@ -63,6 +63,26 @@ do
 done
 ---------------------------------------------------
 
+ Case kullanımı : 
+#!/bin/bash
+
+echo "ayları sec"
+while : 
+do
+read SECIM
+case $SECIM in
+ocak)
+    echo $SECIM 'sectin' ;;
+subat)
+    echo $SECIM 'sectın' 
+    break
+    ;;
+esac
+done
+
+
+---------------------------------------------------
+
 Şartlı for döngüsü : 
 #!/bin/bash
 
