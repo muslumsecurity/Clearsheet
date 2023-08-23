@@ -1,0 +1,19 @@
+C:\Windows\System32\LogFiles: Bu dizin altında farklı log türleri için alt dizinler bulunur. Örneğin:
+
+C:\Windows\System32\LogFiles\W3SVC1: IIS (Internet Information Services) web sunucu logları (varsa).
+C:\Windows\System32\LogFiles\Firewall: Windows Güvenlik Duvarı logları (varsa).
+C:\Windows\System32\winevt\Logs: Bu dizin, Windows Olay Günlüğü (Event Log) dosyalarını içerir. Farklı log türleri burada depolanır.
+
+Application.evtx: Uygulama ile ilgili hatalar ve olaylar.
+Security.evtx: Güvenlik olayları ve denetim kayıtları.
+System.evtx: Sistemle ilgili olaylar ve hatalar.
+C:\Users<Kullanıcı Adı>\AppData\Local\Temp: Bu dizin, kullanıcı bazlı geçici dosyaları içerir. Uygulama ve sistem hatalarıyla ilgili bazı loglar burada olabilir.
+
+C:\Windows\Logs: Bu dizin, farklı Windows bileşenlerine ait logları içerebilir.
+
+C:\Windows\Logs\CBS: Windows Güncelleştirmeleri ve Bileşen Hizmeti logları.
+C:\Windows\Panther: Bu dizin, Windows Yükleme Yöneticisi'nin (Windows Setup Manager) loglarını içerir.
+
+C:\Windows\inf\setupapi.dev.log: Bu dosya, cihaz kurulum işlemleri hakkında detaylı bilgiler içerir.
+
+C:\Windows\debug: Bu dizinde, hata ayıklama amaçlı loglar ve iz sürme dosyaları bulunabilir.
