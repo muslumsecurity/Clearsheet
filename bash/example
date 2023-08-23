@@ -25,6 +25,26 @@ Diğer bir yöntem:
 while read -r line; do
     echo $line
 done < file.txt
+
+while 1'den 10'a kadar bastırmak için :
+#!/bin/bash
+x=1
+while [ $x -le 10 ] 
+do
+    echo "bastir" $x 
+    let x++;
+done
+
+while ile kullanıcıdan aldığımız talimatı uygulatmak:
+#!/bin/bash
+GIRIS='Merhaba'
+while [ "$GIRIS" != "çıkış" ]
+do 
+   echo 'Çıkış yapmak için çıkış yazınız : '
+   read GIRIS
+   echo 'Ekrana yazdırdığım : ' $GIRIS
+done
+
 ---------------------------------------------------
 
 Şartlı for döngüsü : 
