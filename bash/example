@@ -45,6 +45,22 @@ do
    echo 'Ekrana yazdırdığım : ' $GIRIS
 done
 
+While true olduğu sürece dönecek :
+while :
+do
+    echo "ekrana bastır"
+    read DATA    
+    echo "ekrana bastırdığımız şey :" $DATA
+done
+
+While'da entera bastığından çıkış yapan uygulama :
+
+CIKIS="0"
+while [ -n "$CIKIS" ]
+do
+    echo 'çıkmak için entera bas'
+    read CIKIS
+done
 ---------------------------------------------------
 
 Şartlı for döngüsü : 
