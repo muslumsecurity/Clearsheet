@@ -1,0 +1,33 @@
+/var/log: Bu dizin, sistem ve uygulama log dosyalarını içerir. Önemli log dosyaları bu dizinde alt dizinler halinde saklanır. Örneğin:
+
+/var/log/syslog: Genel sistem logları
+/var/log/auth.log: Kimlik doğrulama ve yetkilendirme logları
+/var/log/kern.log: Kernel logları
+/var/log/apt/: Paket yönetimi (APT) ile ilgili loglar
+/var/log/nginx/: Nginx web sunucusu logları (varsa)
+/var/log/apache2/: Apache web sunucusu logları (varsa)
+/var/log/messages: Sistem genelindeki mesajları içeren bir dosya.
+
+/var/log/auth.log: Kimlik doğrulama ve yetkilendirme işlemleri ile ilgili logları içerir.
+
+/var/log/dmesg: Kernel başlangıcı ve donanım hakkında bilgiler içerir.
+
+/var/log/lastlog: Son kullanıcı girişlerini tutar.
+
+/var/log/wtmp: Kullanıcı giriş/çıkışlarını kaydeder.
+
+/var/log/btmp: Başarısız giriş denemelerini kaydeder.
+
+/var/log/secure: Güvenliği ilgilendiren olayları içerir.
+
+/var/log/cron: Cron işlerine ait loglar.
+
+/var/log/mail.log: Postfix veya diğer e-posta sunucularına ait loglar.
+
+/var/log/boot.log: Sistem açılışı ve kapanışıyla ilgili loglar.
+
+/var/log/fail2ban.log: Fail2Ban gibi güvenlik yazılımlarına ait loglar.
+
+**/var/log/mysql/`: MySQL veritabanı logları (varsa).
+
+**/var/log/postgresql/`: PostgreSQL veritabanı logları (varsa).
