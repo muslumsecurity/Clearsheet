@@ -23,3 +23,32 @@ ALTER TABLE parti ADD e-posta VARCHAR(40); // Sütun eklemek istersek
 ALTER TABLE parti ADD e-posta VARCHAR(40) AFTER isim; // İki sütun arasına bir yere sütun eklemek istersek bu kodu kullanırız. Bu komutla isim sütununu tablomuzda e-posta sütunundan sonra oluşturduk.
 ALTER TABLE parti DROP e-posta; // sütunu silmek için
 -------------------------------------------------
+
+
+Basit Bir Arama:
+Bu örnek, belirli bir sütundaki değerleri aramak için kullanılır.
+SELECT * FROM tablo_adi WHERE sutun_adi = 'aranan_deger';
+
+Metin İçinde Arama:
+Belirli bir metni içeren değerleri aramak için LIKE ifadesini kullanabilirsiniz.
+SELECT * FROM tablo_adi WHERE sutun_adi LIKE '%aranan_metin%';
+
+Belirli Bir Aralıktaki Verileri Arama:
+Belirli bir aralıktaki değerleri aramak için BETWEEN ifadesini kullanabilirsiniz.
+SELECT * FROM tablo_adi WHERE sutun_adi BETWEEN deger1 AND deger2;
+
+Birden Fazla Koşulu Birleştirme:
+Birden fazla koşulu birleştirmek için AND veya OR operatörlerini kullanabilirsiniz.
+SELECT * FROM tablo_adi WHERE sutun_1 = deger1 AND sutun_2 = deger2;
+
+NULL Değerleri Arama:
+NULL değerlere sahip kayıtları bulmak için IS NULL veya IS NOT NULL kullanabilirsiniz.
+SELECT * FROM tablo_adi WHERE sutun_adi IS NULL;
+
+Sıralama:
+Verileri belirli bir sütuna göre sıralamak için ORDER BY kullanabilirsiniz.
+SELECT * FROM tablo_adi ORDER BY sutun_adi ASC; -- veya DESC
+
+Gruplama ve Toplam Hesaplama:
+Verileri gruplamak ve toplam hesaplamalar yapmak için GROUP BY ve toplam hesaplayıcı fonksiyonları kullanabilirsiniz.
+SELECT sutun_1, SUM(sutun_2) FROM tablo_adi GROUP BY sutun_1;
