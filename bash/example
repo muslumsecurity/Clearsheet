@@ -258,3 +258,9 @@ echo "adınızı , soyadınızı ve yaşınızı giriniz"
 read ad soyad yas // Tek seferde 3 degisken atadık
 
 echo $ad $soyad $yas // Bu degiskenleri kullanıcıdan aldık.
+
+
+------------------------------------------------------------------
+İçeriye dosya çağırmak :
+#!/bin/bash
+source config.sh // Config adlı dosyayı içeriye çağırdı. Bu sayede config dosyası içerisinde bulunan verileri,değişkenleri başka bir dosya içerisinde kullanabiltik.
