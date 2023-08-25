@@ -255,6 +255,6 @@ done
 Kullanıcıdan tek seferde veri alma :
 #!/bin/bash
 echo "adınızı , soyadınızı ve yaşınızı giriniz"
-read ad soyad yas
+read ad soyad yas // Tek seferde 3 degisken atadık
 
-echo $ad $soyad $yas
+echo $ad $soyad $yas // Bu degiskenleri kullanıcıdan aldık.
