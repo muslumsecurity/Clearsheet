@@ -252,4 +252,9 @@ while [ "$#" -gt '0' ] ; do
         shift
 done
 
+Kullanıcıdan tek seferde veri alma :
+#!/bin/bash
+echo "adınızı , soyadınızı ve yaşınızı giriniz"
+read ad soyad yas
 
+echo $ad $soyad $yas
