@@ -200,3 +200,48 @@ Başka bir örnek:
 # ls komutunu kullanarak belirli bir dizindeki dosyaları listeler
 # Ardından listelenen dosyaları grep komutuyla filtreler ve sadece belirli bir örüntüye sahip dosyaları ekrana yazdırır
 ls /path/to/directory | grep "pattern"
+
+--------------------------------------------------
+Basit scriptler
+#!/bin/bash
+a="host name [`hostname`]"
+echo $a
+
+************************
+Diğer bir örnek :
+#!/bin/bash
+a= "Sen kimsin ? : [`whoami`]"
+echo $a
+
+************************
+Diğer bir örnek :
+#!/bin/bash
+echo "Kullanıcı adınızı giriniz : [`whoami`]"
+read AD
+
+if [ -z "$AD" ] // Eğer kullanıcıdan bir değer almamışsan ekrana kullanıcı adını kendisi yazdırır. -z parametresi(zero) alınacak parametre değeri boşsa bunu yazdırır.
+then
+AD=`whoami`
+fi
+
+echo $AD
+
+----------------------------------------------------
+Parametre vermek :
+#!/bin/bash
+echo 'merhaba' $1
+
+Gelen parametre sayısını hesaplicak kod:
+#!/bin/bash
+echo "Parametre giriniz"
+read PARAM
+echo "Gelen parametre sayısı:  $#"
+
+Bulunduğumuz dosyanın adını kullanmak:
+#!/bin/bash
+echo 'Dosya adı  : $0' // $0 Çalışdığımız yani içinde bulunduğumuz dosyanın adını verir.
+
+Kullanıcıdan alınan tüm parametrelerin birleştirilmesini sağlayan kod:
+#!/bin/bash
+echo 'Tüm alınan parametrelerin birleşimi : $@'
+
