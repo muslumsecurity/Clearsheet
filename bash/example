@@ -245,3 +245,11 @@ Kullanıcıdan alınan tüm parametrelerin birleştirilmesini sağlayan kod:
 #!/bin/bash
 echo 'Tüm alınan parametrelerin birleşimi : $@'
 
+Kullanıcıdan alınan tüm parametreleri alt alta yazdırır : 
+#!/bin/bash
+while [ "$#" -gt '0' ] ; do
+        echo $1;
+        shift
+done
+
+
