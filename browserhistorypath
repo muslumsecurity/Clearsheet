@@ -1,0 +1,12 @@
+Linux : 
+~/.config/google-chrome
+~/.config/chromium
+~/.mozilla/firefox
+~/.config/opera
+~/.config/opera-developer
+
+
+  Windows:
+  C:\Users\<Kullanıcı Adı>\AppData\Local\Google\Chrome
+  C:\Users\<Kullanıcı Adı>\AppData\Roaming\Mozilla\Firefox
+  C:\Users\<Kullanıcı Adı>\AppData\Roaming\Opera Software
