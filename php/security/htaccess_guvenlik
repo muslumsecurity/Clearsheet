@@ -1,0 +1,41 @@
+Directory Indexing Kapatma:
+Options -Indexes
+Bu, dizin içeriğinin listelenmesini engeller ve güvenlik açığı riskini azaltır.
+------------------------------------------------
+
+Server Signature Gizleme:
+ServerSignature Off
+Sunucu imzasını gizleyerek saldırganların sunucu hakkında bilgi edinmesini önler.
+
+------------------------------------------------
+Dosya Uzantılarını Gizleme:
+Options -MultiViews
+Bu, dosya uzantılarını gizleyerek saldırıları önlemeye yardımcı olur.
+
+------------------------------------------------
+ErrorDocument Kullanma:
+ErrorDocument 403 /error-pages/403.html
+ErrorDocument 404 /error-pages/404.html
+Bu, özel hata sayfalarını belirlemek için kullanılır ve kullanıcıya daha anlamlı hata mesajları sunar.
+
+------------------------------------------------
+Hotlink Koruması:
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourdomain.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
+Bu, hotlinking (başka sitelerden resim ve içerikleri çekme) saldırılarına karşı koruma sağlar.
+
+------------------------------------------------
+Dosya Erişim Kontrolleri:
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+Bu, hassas dosyaların doğrudan erişimini kısıtlar.
+
+------------------------------------------------
+X-Content-Type-Options Ayarı:
+Header always set X-Content-Type-Options "nosniff"
+Bu, tarayıcıların MIME türüne güvenmemesini sağlar ve saldırılara karşı bir önlem sağlar.
+
