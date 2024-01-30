@@ -11,6 +11,11 @@ sublist3r -d google.com
 whatweb 
 whois <adress>
 --------------------------------------------
+Social phishing Online
+https://www.toolsbug.com/website-copier-online.php
+https://www.toolsbug.com/
+
+-------------------------------------------
 #Dirbuster
 bak, backup, txt, copy, save, old, rar, zip, tar.gz, pdf
 wordlist = /usr/share/dirbuster/directory-list-2.3-medium.txt
