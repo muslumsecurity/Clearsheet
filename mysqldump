@@ -1,0 +1,2 @@
+mysqldump -u [kullanıcı_adı] -p [veritabanı_adı] > [dosya_adı].sql
+ex : mysqldump -u root -p mydatabase > mydatabase_dump.sql
