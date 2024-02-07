@@ -25,51 +25,30 @@ MySQL
 ALTER TABLE ogrenci RENAME ogrenciler;
 
 Tüm Kayıtları Getirme:
-
-sql
-Copy code
 SELECT * FROM users;
 Bu ifade users tablosundaki tüm kayıtları getirir.
 
 Belirli Sütunları Getirme:
-
-sql
-Copy code
 SELECT username, email FROM users;
 Bu ifade users tablosundan yalnızca username ve email sütunlarını getirir.
 
 Koşullu Arama:
-
-sql
-Copy code
 SELECT * FROM users WHERE username='example';
 Bu ifade users tablosundan username'i 'example' olan kayıtları getirir.
 
 Birden Çok Koşul:
-
-sql
-Copy code
 SELECT * FROM users WHERE username='example' AND password='password';
 Bu ifade users tablosundan username'i 'example' ve password'u 'password' olan kayıtları getirir.
 
 Joker Karakterler:
-
-sql
-Copy code
 SELECT * FROM users WHERE username LIKE 'exa%';
 Bu ifade users tablosundan username'i 'exa' ile başlayan tüm kayıtları getirir. % joker karakteri, sıfır ya da daha fazla karakteri temsil eder.
 
 Sıralama:
-
-sql
-Copy code
 SELECT * FROM users ORDER BY username;
 Bu ifade users tablosundaki kayıtları username sütununa göre sıralar.
 
 Gruplama ve Aggregate Fonksiyonlar:
-
-sql
-Copy code
 SELECT COUNT(*) FROM users GROUP BY account_type;
 Bu ifade, kullanıcıları account_type sütununa göre gruplar ve her grupta kaç kullanıcı olduğunu döndürür.
 
