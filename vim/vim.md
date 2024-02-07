@@ -28,3 +28,4 @@
 | `v`             | Karakter seçimi yapar.                    |
 | `V`             | Satır seçimi yapar.                       |
 | `ctrl+v`        | Blok seçimi yapar.                        |
+| `u`             | Yapılan işlemi geriye alır.               |
