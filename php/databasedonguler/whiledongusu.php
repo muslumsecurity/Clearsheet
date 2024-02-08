@@ -3,32 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>While Döngüsü ile Veri Listeleme</title>
+    <title>PDO ile While Döngüsü ile Veri Listeleme</title>
 </head>
 <body>
-    <h1>While Döngüsü ile Veri Listeleme</h1>
+    <h1>PDO ile While Döngüsü ile Veri Listeleme</h1>
     <ul>
         <?php
         try {
-            // Veritabanına bağlan
-            $conn = new mysqli("localhost", "root", "", "hack");
+            // PDO bağlantısını oluştur
+            $pdo = new PDO("mysql:host=localhost;dbname=hack", "root", "");
 
-            // Bağlantı hatasını kontrol et
-            if ($conn->connect_error) {
-                die("Veritabanına bağlanırken hata oluştu: " . $conn->connect_error);
-            }
+            // Hata modunu ayarla
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Veritabanından veri al
-            $result = $conn->query("SELECT * FROM web_users");
+            $statement = $pdo->query("SELECT * FROM web_users");
 
             // Verileri listeleyen while döngüsü
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                 echo "<li>" . $row["name"] . "</li>";
             }
 
             // Bağlantıyı kapat
-            $conn->close();
-        } catch (Exception $e) {
+            $pdo = null;
+        } catch (PDOException $e) {
             echo "Bir hata oluştu: " . $e->getMessage();
         }
         ?>
