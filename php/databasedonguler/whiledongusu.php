@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>while Döngüsü ile Veri Listeleme</title>
+    <title>While Döngüsü ile Veri Listeleme</title>
 </head>
 <body>
-    <h1>while Döngüsü ile Veri Listeleme</h1>
+    <h1>While Döngüsü ile Veri Listeleme</h1>
     <ul>
         <?php
-        // Veritabanından veri al
-        $conn = new mysqli("localhost", "kullanici_adi", "sifre", "veritabani_adi");
-        $result = $conn->query("SELECT name FROM students");
+        try {
+            // Veritabanına bağlan
+            $conn = new mysqli("localhost", "root", "", "hack");
 
-        // Verileri listeleyen while döngüsü
-        if ($result->num_rows > 0) {
+            // Bağlantı hatasını kontrol et
+            if ($conn->connect_error) {
+                die("Veritabanına bağlanırken hata oluştu: " . $conn->connect_error);
+            }
+
+            // Veritabanından veri al
+            $result = $conn->query("SELECT * FROM web_users");
+
+            // Verileri listeleyen while döngüsü
             while ($row = $result->fetch_assoc()) {
                 echo "<li>" . $row["name"] . "</li>";
             }
-        } else {
-            echo "Veritabanında kayıtlı öğrenci bulunamadı.";
+
+            // Bağlantıyı kapat
+            $conn->close();
+        } catch (Exception $e) {
+            echo "Bir hata oluştu: " . $e->getMessage();
         }
         ?>
     </ul>
