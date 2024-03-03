@@ -7,3 +7,4 @@
 '; alert('1'); // : tek tırnak
 /"><script>alert('1');</script> :  url
 /''><script>alert('1');</script>  : url
+?data=şlsög#<script>alert(1);</script>
