@@ -8,7 +8,7 @@ import subprocess
 def get_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--interface", dest="interface", help="MAC adresini değiştirmek için arayüzü giriniz.")
-    parser.add_argument("-m","--mac",dest="mac address",help="Lütfen denetlenmesi gereken mac adresini gir.")
+    parser.add_argument("-m","--mac",dest="mac",help="Lütfen denetlenmesi gereken mac adresini gir.")
     
     options = parser.parse_args()
     if not options.interface:
