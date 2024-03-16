@@ -30,5 +30,5 @@ while True:
     spoof(options.target_ip, options.spoof_ip)
     sent_packets = sent_packets + 1
     time.sleep(2)
-    print("[+] Packet send ->>" + str(sent_packets))
+    print("\r[+] Sent " + str(packets_sent_count), end="")
 
