@@ -6,14 +6,18 @@ from scapy.layers import http
 
 def sniff(interface):
     scapy.sniff(iface=interface, prn=process_sniffed_packet, store=False)
+
+def get_url(packet):
+    url = packet[http.HTTPRequest].Host.decode() +  packet[http.HTTPRequest].Path.decode()
+    return url   
+    
     
 def process_sniffed_packet(packet):
     if packet.haslayer(http.HTTPRequest):
-        http_host = packet[http.HTTPRequest].Host.decode()
-        http_path = packet[http.HTTPRequest].Path.decode()
+       url = get_url(packet)
         if packet.haslayer(scapy.Raw):
             load = packet[scapy.Raw].load.decode()
-            print("[+] HTTP host:", http_host, "HTTP path:", http_path + " [+] ", sep=" ")
+            print("[+] HTTP host:" + url)
             print("------------- DATA -------------------")
             print(load)
             print("--------------------------------------")
