@@ -30,7 +30,7 @@ def get_arp_table(scan_ip):
 
 
 
-def get_route_ip():
+def get_route_ip(interface):
     route_result = subprocess.check_output(["route","-n"])
     output_regex = re.search( r"0\.0\.0\.0\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})", str(route_result))
     
@@ -54,7 +54,7 @@ def check_arp_spoofing(scan_ip, gateway_ip):
         print("Bir sorun görünmüyor...")              
 
 options = get_arguments()
-gateway_ip = get_route_ip()
+gateway_ip = get_route_ip(options.interface)
 arp_scan = get_arp_table(options.scan_ip)
 
 schedule.every(5).seconds.do(check_arp_spoofing, scan_ip=options.scan_ip,gateway_ip=gateway_ip)
