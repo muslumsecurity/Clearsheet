@@ -1,11 +1,27 @@
 <?php
 
 class HttpMethodService{
-        public function getMethod($requestData){  
+        public function getMethod($requestData){
+                $userData = $requestData;
+                return $userData;
         }
         public function postMethod($requestData){
+                $userData = $requestData;
+                return $userData;
         }
-        public function deleteMethod($requestData){
+        public function deleteMethod($filePath){
+                $userData = $filePath;
+                $data = file_get_contents('php://input');
+                if($_SERVER['REQUEST_METHOD'] == 'DELETE'){
+                        if(file_exist($filePath)){
+                                unlik($filePath);
+                                $response = ["message" => "Dosya başarıyla silindi."];
+                                return $response;
+                        }else{
+                                $response = ["message" = "Dosya bulunamadı."];
+                                return $response;
+                        }
+                }
         }
         public function putMethod($requestData){
         }
@@ -14,15 +30,20 @@ class HttpMethodService{
 }
 
 class HttpStatusCodeService{
-       public function informationalMethod(){
+       public function informationalMethod($inputData){
+               return http_status_code($inputData);
        }
-       public function successMethod(){
+       public function successMethod($inputData){
+               return http_status_code($inputData);
        }
-       public function redirectionMethod(){
+       public function redirectionMethod($inputData){
+               return http_status_code($inputData);
        }
-       public function clientErrorMethod(){
+       public function clientErrorMethod($inputData){
+               return http_status_code($inputData);
        }
-       public function serverErrorMethod(){
+       public function serverErrorMethod($inputData){
+               return http_status_code($inputData);
        }
   
        
