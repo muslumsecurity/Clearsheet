@@ -27,12 +27,12 @@ class AuthenticationManager{
 
   private function authLogin($userName,$userPassword){
     try {
-      parent::connectToDatabase();
+       $conn = $this->connectToDatabase();
       // PDO hata modunu ayarla
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
       // Prepared statement oluştur
-      $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+      $stmt = $conn->prepare("SELECT * FROM basics WHERE username = :username AND password = :password");
     
       // Değişkenleri bağla
       $stmt->bindParam(':username', $username);
