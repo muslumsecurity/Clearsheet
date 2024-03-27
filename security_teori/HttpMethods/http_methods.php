@@ -14,7 +14,7 @@ class HttpMethodService extends HttpStatusCodeService {
 
     public function postMethod($requestData) {
         $userData = $requestData;
-        return $userData;
+        return json_encode($userData);
     }
 
     public function deleteMethod($filePath) {
