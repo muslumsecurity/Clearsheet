@@ -1,57 +1,60 @@
 <?php
 
-class HttpStatusCodeService{
-       protected function statusCodeMethod($inputData){
-               return http_response_code($inputData);
-       }
+class HttpStatusCodeService {
+    protected function statusCodeMethod($inputData) {
+        return http_response_code($inputData);
+    }
 }
 
+class HttpMethodService extends HttpStatusCodeService {
+    public function getMethod($requestData) {
+        $userData = $requestData;
+        return $userData;
+    }
 
-class HttpMethodService extends HttpStatusCodeService{
-        public function getMethod($requestData){
-                $userData = $requestData;
-                return $userData;
+    public function postMethod($requestData) {
+        $userData = $requestData;
+        return $userData;
+    }
+
+    public function deleteMethod($filePath) {
+        if (file_exists($filePath)) {
+            if (unlink($filePath)) {
+                $response = ["message" => "Dosya başarıyla silindi."];
+                parent::statusCodeMethod(200);
+            } else {
+                $response = ["message" => "Dosya silinirken bir hata oluştu."];
+                parent::statusCodeMethod(500);
+            }
+        } else {
+            $response = ["message" => "Dosya bulunamadı."];
+            parent::statusCodeMethod(404);
         }
-        public function postMethod($requestData){
-                $userData = $requestData;
-                return $userData;
+        return $response;
+    }
+
+    public function putMethod($filePath, $fileName) {
+        if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+            $data = file_get_contents('php://input');
+            $filePath = rtrim($filePath, '/'); // Sonunda / karakteri varsa kaldır
+            $filePath = $filePath . '/' . $fileName; // Dosya yolu ile dosya adını birleştir
+            if (file_put_contents($filePath, $data)) {
+                $response = ["message" => "Dosya başarıyla kaydedildi.", "file_path" => $filePath];
+                parent::statusCodeMethod(200);
+            } else {
+                $response = ["message" => "Dosya kaydedilirken bir hata oluştu."];
+                parent::statusCodeMethod(500);
+            }
+            return $response;
         }
-        public function deleteMethod($filePath){
-               $data = file_get_contents('php://input'); 
-               $userData = $filePath; 
-                if(file_exists($filePath)){
-                        unlik($filePath);
-                        $response = ["message" => "Dosya başarıyla silindi."];
-                        parent::statusCodeMethod(200);
-                        return $response;
-                        
-                }else{
-                        $response = ["message" = "Dosya bulunamadı."];
-                        parent::statusCodeMethod(404);
-                        return $response;
-                }
-        }
-        public function putMethod($filePath,$fileName){  
-               if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
-                     $data = file_get_contents('php://input');
-                     $fileName = $filePath."/".$fileName;
-                     if(file_put_contents($fileName,$data))){
-                            $response = ["Message" => "Success.. ->" , $fileName];
-                            parent::statusCodeMethod(200);
-                     }else{
-                            $response = ["Message" => "Unsucess"];
-                            parent::statusCodeMethod(404);
-                     }
-               }
-               
-              
-               
-        }
-        public function patchMethod($requestData){
-        }
+    }
+
+    public function patchMethod($requestData) {
+        // PATCH metodu için gerekli işlemler burada yapılacak
+    }
 }
 
-$httpMethodService = new HttpMethodService(); // Örnek bir HttpMethodService sınıfı oluşturulduğunu varsayalım.
+$httpMethodService = new HttpMethodService(); // HttpMethodService sınıfından bir örnek oluştur
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
@@ -65,13 +68,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
     case 'DELETE':
         if (isset($_GET['FilePath']) && !empty($_GET['FilePath'])) {
-           echo json_encode($httpMethodService->deleteMethod($_GET['FilePath']));
+            echo json_encode($httpMethodService->deleteMethod($_GET['FilePath']));
         }
         break;
     case 'PUT':
-       if (isset($_GET['filePath']) && !empty($_GET['filePath']) && isset($_GET['fileName']) && !empty($_GET['fileName'])){
-              echo $httpMethodService->putMethod($_GET['filePath'] , $_GET['FileName']);
-       }
+        if (isset($_GET['filePath']) && !empty($_GET['filePath']) && isset($_GET['fileName']) && !empty($_GET['fileName'])) {
+            echo json_encode($httpMethodService->putMethod($_GET['filePath'], $_GET['fileName']));
+        }
         break;
     case 'POST':
         if (isset($_POST['UserData']) && !empty($_POST['UserData'])) {
@@ -84,11 +87,3 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 }
 ?>
-
-
-
-
-
-?>
-
-
