@@ -1,15 +1,15 @@
 <?php
 
 class HttpStatusCodeService {
-    protected function statusCodeMethod($inputData) {
-        return http_response_code($inputData);
+    public function statusCodeMethod($inputData) {
+        http_response_code($inputData);
     }
 }
 
 class HttpMethodService extends HttpStatusCodeService {
     public function getMethod($requestData) {
-        $userData = $requestData;
-        return $userData;
+        $userData = ['Message' => $requestData];
+        return json_encode($userData);
     }
 
     public function postMethod($requestData) {
@@ -78,7 +78,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
     case 'POST':
         if (isset($_POST['UserData']) && !empty($_POST['UserData'])) {
-            // POST işlemleri buraya gelecek
+            echo $httpMethodService->postMethod($_POST['UserData']);
+        } else {
+            // POST verisi yoksa
+            $httpMethodService->statusCodeMethod(400);
         }
         break;
     default:
