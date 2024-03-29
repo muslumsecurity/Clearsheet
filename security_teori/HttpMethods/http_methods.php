@@ -1,5 +1,5 @@
 <?php
-
+// http methodları kullanılarak zaafiyetli kodlar ve denemeler.
 class HttpStatusCodeService {
     public function statusCodeMethod($inputData) {
         http_response_code($inputData);
