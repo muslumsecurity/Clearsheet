@@ -25,7 +25,7 @@ class AuthenticationManager{
     }
   }
 
-  private function authLogin($userName,$userPassword){
+  public function authLogin($userName, $userPassword){
     try {
        $conn = $this->connectToDatabase();
       // PDO hata modunu ayarla
@@ -35,8 +35,8 @@ class AuthenticationManager{
       $stmt = $conn->prepare("SELECT * FROM basics WHERE username = :username AND password = :password");
     
       // Değişkenleri bağla
-      $stmt->bindParam(':username', $username);
-      $stmt->bindParam(':password', $password);
+      $stmt->bindParam(':username', $userName);
+      $stmt->bindParam(':password', $userPassword);
     
       // Sorguyu çalıştır
       $stmt->execute();
@@ -44,37 +44,27 @@ class AuthenticationManager{
       // Kullanıcıyı kontrol et
       if ($stmt->rowCount() > 0) {
           // Kullanıcı bulundu
-          $response =  ["Message" => "Hoş geldiniz. -> ".$_SERVER['PHP_AUTH_USER']];
+          $response =  ["Message" => "Hoş geldiniz. -> " . $userName];
       } else {
           // Kullanıcı bulunamadı veya parola hatalı
           $response =  ["Message" => "Giriş başarısız!"];
       }
       return $response;
-  } catch(PDOException $e) {
-      echo "Veritabanından listeleme hatası: " . $e->getMessage();
+    } catch(PDOException $e) {
+      // Veritabanı hatasını yakala ve kullanıcıya uygun bir mesaj gönder
+      return ["Error" => "Veritabanından listeleme hatası: " . $e->getMessage()];
+    }
   }
-    
-  }
-    
-  
 }
 
-
-
 // Kullanıcı adı ve parolanın doğruluğunu kontrol etme
-if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']){
-    $AuthenticationManager = new AuthenticationManager;
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
     header('WWW-Authenticate: Basic realm="Giriş yapınız"');
     header('HTTP/1.0 401 Unauthorized');
+    echo json_encode(["Message" => "Kimlik bilgileri sağlanmadı."]);
+} else {
+    $AuthenticationManager = new AuthenticationManager;
     echo json_encode($AuthenticationManager->authLogin($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']));
 }
 
-
-
-
-
-
 ?>
-
-
-
