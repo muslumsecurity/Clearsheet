@@ -1,0 +1,3 @@
+1 - Cookie manipulasyonlarına bak. Eğer içeriye auth olduktan sonra cookie ile giden gelen değerleri incele.(Burp Suite kullan match-replace özelliğiyle her gelen istek elle değiştirmek yerine otomatik olarak değiştirir.)
+2 - User id' leri url üzerinde parametre alarak ulaşamayacakları alanlara ulaşıyor mu kotnrol et .
+3 - Farklı kullanıcıların dosyalarına erişim sağlayabiliyor musun? yada bunları okuyabiliyor muyuz? kotnrol et.
