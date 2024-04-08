@@ -1,6 +1,7 @@
 ------------------------------------------------------------------------------------------------------------------------------
 # Basic Source Code Analysis
 find brandfolder/ -type f -name "*.php*" | xargs grep -l '$_GET\|$_POST\|$_REQUEST' | xargs grep -in '$_GET\|$_POST\|$_REQUEST'
+grep -rnw '/path/to/your/php/files' -e "eval(" -e "exec(" -e "passthru(" -e "system(" -e "shell_exec(" -e "popen(" -e "proc_open(" -e "pcntl_exec(" -e "assert(" -e "unserialize(" -e "base64_decode(" -e "curl_exec(" -e "curl_multi_exec(" -e "parse_str(" -e "include " -e "include_once" -e "require " -e "require_once" -e "fopen(" -e "file_get_contents(" -e "file_put_contents("
 
 
 
