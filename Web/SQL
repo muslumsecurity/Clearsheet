@@ -94,6 +94,24 @@ http://<targetip>/shell.php?cmd=id
 # Then use Pentest Monkey Reverse Shells to call your shell
 
 -----------------------------------
+Time Based Sql İnjection
+MySQL
+BENCHMARK(): Veritabanı sunucusunu belirli bir işlemi tekrar tekrar çalıştırarak meşgul eder. Örneğin, BENCHMARK(1000000,SHA1('OpenAI')).
+pg_sleep(): PostgreSQL için bir alternatiftir ama bir MySQL sorgusunda kullanıldığında, sistemde bir hata veya gecikmeye yol açabilir.
+
+PostgreSQL
+pg_sleep(): Sorgunun belirli bir süre boyunca uyumasını sağlar. Örneğin, pg_sleep(10) sorguyu 10 saniye boyunca duraklatır.
+
+Microsoft SQL Server
+WAITFOR DELAY '00:00:05': Sorgunun belirli bir süre (örneğin, 5 saniye) beklemesini sağlar.
+WAITFOR TIME '23:59:59': Sorgunun belirtilen saate kadar beklemesini sağlar, bu da belirli bir zaman odaklı gecikme yaratabilir.
+
+Oracle
+DBMS_LOCK.SLEEP(): Sorgunun belirli bir süre boyunca uyumasını sağlar. Örneğin, DBMS_LOCK.SLEEP(5) sorguyu 5 saniye boyunca duraklatır.
+
+SQLite
+SQLite doğrudan uyku fonksiyonları sunmaz, ancak zaman aşımına neden olabilecek karmaşık sorgular veya döngüler kullanılarak benzer bir etki yaratılabilir.
+-----------------------------------
 #SQL İnjection login bypass
 1 ' or 1 = 1 LIMIT <limit sayisi> -- +
 yada : 
