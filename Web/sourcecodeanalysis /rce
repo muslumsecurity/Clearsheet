@@ -1,68 +1,30 @@
+RUBY:
+grep -rnw '/path/to/your/ruby/files' -e "`" -e "system" \
+                                    -e "exec" \
+                                    -e "eval" \
+                                    -e "Kernel.open" \
+                                    -e "IO.popen"
+.NET:
+grep -rnw '/path/to/your/dotnet/files' -e "Process.Start" \
+                                       -e "System.Diagnostics.Process" \
+                                       -e "System.CodeDom.Compiler" \
+                                       -e "System.Reflection.Assembly"
+GO:
+grep -rnw '/path/to/your/go/files' -e "exec.Command" \
+                                   -e "os.StartProcess"
 
-# Basic Source Code Analysis
-find brandfolder/ -type f -name "*.php*" | xargs grep -l '$_GET\|$_POST\|$_REQUEST' | xargs grep -in '$_GET\|$_POST\|$_REQUEST'
-
-------------------------------------------------------------------------------------------------------------------------------
-PHP : grep -rnw '/path/to/your/php/files' -e "eval(" -e "exec(" -e "passthru(" -e "system(" -e "shell_exec(" -e "popen(" -e "proc_open(" -e "pcntl_exec(" -e "assert(" -e "unserialize(" -e "base64_decode(" -e "curl_exec(" -e "curl_multi_exec(" -e "parse_str(" -e "include " -e "include_once" -e "require " -e "require_once" -e "fopen(" -e "file_get_contents(" -e "file_put_contents("
-
-eval()
-exec()
-passthru()
-system()
-shell_exec()
-popen()
-proc_open()
-pcntl_exec()
-assert()
-unserialize()
-base64_decode()
-curl_exec()
-curl_multi_exec()
-parse_str()
-include
-include_once
-require
-require_once
-fopen()
-file_get_contents()
-file_put_contents()
-
-
-
-
-
-------------------------------------------------------------------------------------------------------------------------------
-PYTHON : grep -rnw '/path/to/your/php/files' -e "eval(" -e "exec(" -e "passthru(" -e "system(" -e "shell_exec(" -e "popen(" -e "proc_open(" -e "pcntl_exec(" -e "assert(" -e "unserialize(" -e "base64_decode(" -e "curl_exec(" -e "curl_multi_exec(" -e "parse_str(" -e "include " -e "include_once" -e "require " -e "require_once" -e "fopen(" -e "file_get_contents(" -e "file_put_contents("
-
-eval
-exec
-os.system
-os.popen
-subprocess.Popen
-subprocess.call
-subprocess.run
-open
-
-------------------------------------------------------------------------------------------------------------------------------
-RUBY : grep -rnw '/path/to/your/ruby/files' -e "eval(" -e "exec(" -e "system(" -e "%x[" -e "Kernel.open" -e "IO.popen(" -e "File.open("
-
-eval
-exec
-system
-%x
-Kernel.open
-IO.popen
-File.open
-
-
-
-------------------------------------------------------------------------------------------------------------------------------
-JAVASCRİPT : grep -rnw '/path/to/your/javascript/files' -e "eval(" -e "setTimeout(" -e "setInterval(" -e "Function(" -e "execScript(" -e "innerHTML" -e "document.write"
-
-eval
-setTimeout (dinamik ifadeler ile)
-setInterval (dinamik ifadeler ile)
-Function
-execScript
-innerHTML
-document.write
+PYTHON:
+grep -rnw '/path/to/your/python/files' -e "subprocess.Popen" \
+                                       -e "os.system" \
+                                       -e "os.popen" \
+                                       -e "exec" \
+                                       -e "eval"
+PHP:
+grep -rnw '/path/to/your/php/files' -e "exec(" \
+                                    -e "shell_exec(" \
+                                    -e "system(" \
+                                    -e "passthru(" \
+                                    -e "eval(" \
+                                    -e "assert(" \
+                                    -e "popen(" \
+                                    -e "proc_open("
