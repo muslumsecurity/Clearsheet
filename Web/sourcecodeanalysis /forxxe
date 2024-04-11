@@ -1,0 +1,49 @@
+PHP : 
+grep -rnw '/path/to/your/php/files' -e "simplexml_load_string(" \
+                                    -e "simplexml_load_file(" \
+                                    -e "xml_parser_create(" \
+                                    -e "xml_parse(" \
+                                    -e "xml_parse_into_struct(" \
+                                    -e "DOMDocument->loadXML(" \
+                                    -e "DOMDocument->load(" \
+                                    -e "XMLReader->open(" \
+                                    -e "XMLReader->XML(" \
+                                    -e "xmlrpc_decode_request(" \
+                                    -e "xmlrpc_encode_request("
+
+RUBY:
+grep -rnw '/path/to/your/ruby/files' -e "REXML::Document.new" \
+                                    -e "Nokogiri::XML" \
+                                    -e "Nokogiri::XML::Document.parse"
+
+
+
+
+
+
+
+
+PYTHON:
+grep -rnw '/path/to/your/python/files' -e "ElementTree.parse" \
+                                       -e "ElementTree.fromstring" \
+                                       -e "lxml.etree.parse" \
+                                       -e "lxml.etree.fromstring" \
+                                       -e "xml.dom.minidom.parse" \
+                                       -e "xml.dom.minidom.parseString"
+
+
+
+
+.NET : 
+grep -rnw '/path/to/your/dotnet/files' -e "XmlDocument.Load" \
+                                       -e "XmlDocument.LoadXml" \
+                                       -e "XmlTextReader" \
+                                       -e "XDocument.Load" \
+                                       -e "XElement.Load"
+
+
+
+GO:
+grep -rnw '/path/to/your/go/files' -e "xml.NewDecoder" \
+                                   -e "xml.Unmarshal"
+
