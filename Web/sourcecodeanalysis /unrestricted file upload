@@ -1,1 +1,27 @@
+RUBY :
+grep -rnw '/path/to/your/ruby/files' -e "File.new" \
+                                    -e "File.open" \
+                                    -e "FileUtils.cp" \
+                                    -e "FileUtils.mv"
+.NET :
+grep -rnw '/path/to/your/dotnet/files' -e "IFormFile" \
+                                       -e "File.Create" \
+                                       -e "FileInfo" \
+                                       -e "Path.Combine"
+
+.GO :
+grep -rnw '/path/to/your/go/files' -e "os.Create" \
+                                   -e "ioutil.WriteFile" \
+                                   -e "os.WriteFile"
+PYTHON :
+grep -rnw '/path/to/your/python/files' -e "open(" \
+                                       -e "os.rename(" \
+                                       -e "shutil.move(" \
+                                       -e "shutil.copy("
+PHP :
+grep -rnw '/path/to/your/php/files' -e "is_uploaded_file(" \
+                                    -e "copy(" \
+                                    -e "fopen(" \
+                                    -e "fwrite(" \
+                                    -e "fclose("
 
