@@ -1,1 +1,22 @@
+RUBY :
+grep -rnw '/path/to/your/ruby/files' -e "find_by_sql" \
+                                    -e "execute"
+.NET:
+grep -rnw '/path/to/your/dotnet/files' -e "SqlCommand" \
+                                       -e "OleDbCommand" \
+                                       -e "ExecuteNonQuery" \
+                                       -e "ExecuteReader" \
+                                       -e "ExecuteScalar"
+GO:
+grep -rnw '/path/to/your/go/files' -e "db.Query" \
+                                   -e "db.QueryRow" \
+                                   -e "db.Exec"
+PYTHON:
+grep -rnw '/path/to/your/python/files' -e "cursor.execute" \
+                                       -e "execute("
+PHP:
+grep -rnw '/path/to/your/php/files' -e "mysql_query(" \
+                                    -e "mysqli_query(" \
+                                    -e "$pdo->query(" \
+                                    -e "$pdo->exec("
 
