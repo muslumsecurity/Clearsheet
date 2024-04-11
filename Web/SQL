@@ -96,7 +96,7 @@ http://<targetip>/shell.php?cmd=id
 -----------------------------------
 Time Based Sql İnjection
 MySQL
-BENCHMARK(): Veritabanı sunucusunu belirli bir işlemi tekrar tekrar çalıştırarak meşgul eder. Örneğin, BENCHMARK(1000000,SHA1('OpenAI')).
+BENCHMARK(): Veritabanı sunucusunu belirli bir işlemi tekrar tekrar çalıştırarak meşgul eder. Örneğin, 1' AND BENCHMARK(1000000,SHA1('OpenAI')).
 pg_sleep(): PostgreSQL için bir alternatiftir ama bir MySQL sorgusunda kullanıldığında, sistemde bir hata veya gecikmeye yol açabilir.
 
 PostgreSQL
