@@ -1,0 +1,42 @@
+PHP:
+grep -rnw '/path/to/your/php/files' -e "echo" \
+                                    -e "print" \
+                                    -e "print_r" \
+                                    -e "var_dump" \
+                                    -e "printf" \
+                                    -e "<?php" \
+                                    -e "<?= "
+
+
+
+
+RUBY:
+grep -rnw '/path/to/your/ruby/files' -e "html_safe" \
+                                    -e "raw" \
+                                    -e "render" \
+                                    -e "<%="
+
+
+.NET:
+grep -rnw '/path/to/your/dotnet/files' -e "Response.Write" \
+                                       -e ".innerHTML" \
+                                       -e ".outerHTML" \
+                                       -e "eval(" \
+                                       -e "document.write"
+
+
+GO:
+grep -rnw '/path/to/your/go/files' -e "template.HTML" \
+                                   -e "template.JS" \
+                                   -e "template.URL" \
+                                   -e "template.HTMLAttr"
+
+                                   
+PYTHON:
+grep -rnw '/path/to/your/python/files' -e "mark_safe" \
+                                       -e "|safe" \
+                                       -e "Markup" \
+                                       -e "{{" \
+                                       -e "jinja2.Environment"
+
+
