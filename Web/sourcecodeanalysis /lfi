@@ -1,1 +1,29 @@
+RUBY : 
+grep -rnw '/path/to/your/ruby/files' -e "File.open" \
+                                    -e "Kernel#open" \
+                                    -e "send_file"
+
+
+.NET :
+grep -rnw '/path/to/your/dotnet/files' -e "File.ReadAllText" \
+                                       -e "File.OpenRead" \
+                                       -e "FileStream("
+GO :
+grep -rnw '/path/to/your/go/files' -e "ioutil.ReadFile" \
+                                   -e "os.Open" \
+                                   -e "http.ServeFile"
+PYTHON:
+grep -rnw '/path/to/your/python/files' -e "open(" \
+                                       -e "file(" \
+                                       -e "os.popen" \
+                                       -e "os.system" \
+                                       -e "subprocess.Popen"
+PHP:
+grep -rnw '/path/to/your/php/files' -e "include " \
+                                    -e "require " \
+                                    -e "include_once" \
+                                    -e "require_once" \
+                                    -e "fopen(" \
+                                    -e "file_get_contents(" \
+                                    -e "file_put_contents("
 
