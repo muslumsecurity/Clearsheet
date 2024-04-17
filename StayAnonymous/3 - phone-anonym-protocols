@@ -1,1 +1,22 @@
+1 - Gps kapat ve konum izinlerini kapat.
+2 - Şehir içi takip için baz istasyonu triangülasyonu kullanır.
+3 - Telefonu uçak moduna al.
+4 - Sim kartını çıkar.
+5 - Wifi triangülasyonu da aynı şekilde kullanılmakta. Wifi kapat wifi açmak gerekirse mac adresini random olarak ayarla.
+6 - Wifi taraması ayarlarını kapatın. Çünkü bu ayar arkaplanda wifi ağlarını tararken google a veri gönderir.
+7 - İnternet trafiğini anonimize etmek istiyorsan tor kullan.
+8 - Bluetooth telefon hakkında model bilgisi mac adresi ve bağlanılan cihazlar gibi bilgileri sinyaller aracılığıyla otomatik paylaşır. Bluetooth cihazlar er an bağlantı ararlar. Ve konumunuz bu sayede 6 cm hata payıyla öğrenilebilir.
+Arka planda takip edilmemek için bluetooth taramasını kapatın.
+9 - Telefonunuzdaki sensörleer,mikrofonlar ve hoparlörler elektronik alıcılara özel ultrasonik sesler yayarlar. Bunlar herhangi bir ağa bağlı olmasanız bile sizi takip etmek amaçlı uygulamalar tarafından her an kullanılır.
+Tüm arkaplan miktofon izinlerini kaldırın. ve sadece kullanımdayken izin verin. 
+10 - Geliştirici ayarlarından sensör izinilerini de kaldırın.
 
+
+
+--------------------------------------
+Telefonlar sizi nasıl dinler ?
+Telefonlarımız tam olarak bizleri dinlemiyor. Çevremizdeki herşeyi dinliyorlar. Uygulamalar telefonunuzdaki mikrofonlara erişerek normalde bize duyulmayan
+18-20 khz aralığındaki ultrasonik sesleri dinleyebilirler. Çevrediki cihazlaın sinyal vericileriyle iletişim kurup küçük miktaralarda veriler paylaşırlar.  Saniyede 10 ile 20 bit arasındaki bu veriler
+cihazınız hakkında takip edilebilir bilgiler, monitörünüzdeki içerikler, ve televizyonda gördüğünüz reklamlar gibi bilgileri içeriyor. Bu frekans transmisyonu20 metre öteden bilgi aktarımı yapabiliyor. İnternete
+bağlı olmayan cihazlarla bile frekans iletişişmi kurabiliyor. cihazlar arası ultrasonik takip denikn bu teknoloji tüm modern cihazlarda bulunuyor. Mikrofon izinierini kapatsanız daultrasonik ilretişim kullanması izin gerektirmeyen
+jiroskop gibi sensörlerle gerçekleşebilir. Sadece ses çıktısı alan hoparlör bile ultrasonik iletişim kurmak için tamamen uygundur. Kendimizi korumanın tek yolu cihazlarımızdan sökmektir.
