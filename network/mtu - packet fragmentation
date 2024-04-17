@@ -7,7 +7,7 @@ For linux :
 ip link show
 
 
-
+------------------------------------
 Packet Fraggmente :
 Don't fragment set flagas in ip header
 
@@ -19,3 +19,16 @@ ping -f -l 1500 example.com
 
 For linux:
 ping -M do -s 1500 example.com
+
+--------------------------------------
+Mtu path discovery araçları : 
+
+For windows : 
+mturoute [adres]
+* mturoute.exe aracının indirilmesi gerekiyor.
+
+For linux : 
+tracepath <destination>
+
+
+traceroute -I -F <destination>
