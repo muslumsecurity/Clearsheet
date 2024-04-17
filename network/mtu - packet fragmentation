@@ -1,0 +1,21 @@
+Mtu değeri öğrenme :
+
+For windows :
+netsh interface ipv4 show interfaces
+
+For linux : 
+ip link show
+
+
+
+Packet Fraggmente :
+Don't fragment set flagas in ip header
+
+
+For windows : 
+ping -f -l 1500 example.com
+
+
+
+For linux:
+ping -M do -s 1500 example.com
