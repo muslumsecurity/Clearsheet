@@ -14,9 +14,10 @@ Tüm arkaplan miktofon izinlerini kaldırın. ve sadece kullanımdayken izin ver
 
 
 --------------------------------------
-Telefonlar sizi nasıl dinler ?
-Telefonlarımız tam olarak bizleri dinlemiyor. Çevremizdeki herşeyi dinliyorlar. Uygulamalar telefonunuzdaki mikrofonlara erişerek normalde bize duyulmayan
-18-20 khz aralığındaki ultrasonik sesleri dinleyebilirler. Çevrediki cihazlaın sinyal vericileriyle iletişim kurup küçük miktaralarda veriler paylaşırlar.  Saniyede 10 ile 20 bit arasındaki bu veriler
-cihazınız hakkında takip edilebilir bilgiler, monitörünüzdeki içerikler, ve televizyonda gördüğünüz reklamlar gibi bilgileri içeriyor. Bu frekans transmisyonu20 metre öteden bilgi aktarımı yapabiliyor. İnternete
-bağlı olmayan cihazlarla bile frekans iletişişmi kurabiliyor. cihazlar arası ultrasonik takip denikn bu teknoloji tüm modern cihazlarda bulunuyor. Mikrofon izinierini kapatsanız daultrasonik ilretişim kullanması izin gerektirmeyen
-jiroskop gibi sensörlerle gerçekleşebilir. Sadece ses çıktısı alan hoparlör bile ultrasonik iletişim kurmak için tamamen uygundur. Kendimizi korumanın tek yolu cihazlarımızdan sökmektir.
+Telefonlarımızı sadece bizleri dinlemekle kalmayıp, çevremizdeki her şeyi de dinleyebilirler. Uygulamalar, telefonunuzdaki mikrofonlara erişerek normalde duyulamayan 18-20 kHz aralığındaki ultrasonik sesleri dinleyebilirler.
+Ayrıca, çevredeki cihazların sinyal vericileriyle iletişim kurup küçük miktarda veri paylaşırlar. Saniyede 10 ile 20 bit arasındaki bu veriler, cihazınız hakkında takip edilebilir bilgiler içerir.
+Örneğin, monitörünüzdeki içerikler veya televizyonda gördüğünüz reklamlar gibi bilgiler.
+Bu frekans transmisyonu 20 metre öteden bilgi aktarımı yapabilir. İnternete bağlı olmayan cihazlarla bile frekans iletişimi kurabilirler.
+"Cihazlar arası ultrasonik takip" denilen bu teknoloji, tüm modern cihazlarda bulunmaktadır. 
+Mikrofon izinlerini kapatsanız bile, ultrasonik iletişim kullanarak, izin gerektirmeyen sensörlerle (örneğin jiroskop gibi) gerçekleşebilir.
+Sadece ses çıkışı alan hoparlör bile ultrasonik iletişim kurmak için tamamen uygundur. Kendimizi korumanın tek yolu cihazlarımızı tamamen sökmektir.
