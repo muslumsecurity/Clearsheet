@@ -1,0 +1,18 @@
+-------
+Başarım araçları
+Icmp 
+Arp
+Tracert 
+
+For Windows:
+ıcmp : ping 8.8.8.8
+arp : arp -a [hedef IP adresi]
+tracert : tracert www.google.com
+
+For linux:
+Icmp : ping 8.8.8.8
+Arp : arp -e [hedef IP adresi]
+Tracert : traceroute www.google.com
+
+
+
