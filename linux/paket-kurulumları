@@ -1,1 +1,29 @@
+LİNUX PAKET KURULUMLARI : 
+sudo apt install paket_adi
+sudo apt update        # Paket listesini günceller
+sudo apt upgrade       # Yüklü paketleri günceller
+sudo apt remove paket_adi      # Paketi kaldırır, yapılandırma dosyalarını bırakır
+sudo apt purge paket_adi       # Paketi ve yapılandırma dosyalarını kaldırır
+apt search arama_terimi
+apt show paket_adi
+sudo apt remove paket_adi         # Paketi kaldırır ancak yapılandırma dosyalarını bırakır
+sudo apt purge paket_adi          # Paketi ve tüm yapılandırma dosyalarını kaldırır
+sudo apt autoremove               # Gereksiz bağımlılıkları kaldırır
+sudo apt autoclean                # İndirilen paket arşivlerini temizler
+
+Dpgk : 
+sudo dpkg -i paket_dosyasi.deb # .deb paketi yükleme
+sudo dpkg -r paket_adi # .deb paketi kaldırma (yapılandırma dosyalarını bırakır)
+sudo dpkg -P paket_adi # .deb paketi ve yapılandırma dosyalarını kaldırma
+sudo dpkg -P paket_adi # .deb paketi ve yapılandırma dosyalarını kaldırma
+dpkg -l # Sistemde yüklü olan tüm paketlerin listesini sağlama
+dpkg -l # Sistemde yüklü olan tüm paketlerin listesini sağlama
+dpkg -L paket_adi # Belirtilen paket tarafından yüklenen dosyaların listesini sağlama
+dpkg -S dosya_yolu # Belirtilen dosyanın hangi pakete ait olduğunu araştırma
+
+Make :
+./configure # Yapılandırma betiğini çalıştırma
+make # Kaynak kodunu derleme
+sudo make install # Derlenen yazılımı sisteme kurma
+make clean # Derleme sonrası geçici dosyaları temizleme
 
