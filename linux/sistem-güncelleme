@@ -1,1 +1,6 @@
+sudo apt update # Paket listelerini güncelleme
+sudo apt upgrade # Yüklü paketleri güncelleme
+sudo apt full-upgrade # Sistemi tam güncelleme
+sudo apt autoremove # Gereksiz bağımlılıkları kaldırma
+sudo apt autoclean # Eski, artık kullanılmayan paket arşivlerini temizleme
 
