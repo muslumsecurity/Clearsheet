@@ -1,0 +1,23 @@
+ZIP Dosyaları :
+zip -r arsiv_adi.zip klasor_adi # Zip dosyası oluşturma
+unzip arsiv_adi.zip # Zip dosyasını açma
+
+TAR Dosyaları:
+tar -czvf arsiv_adi.tar.gz klasor_adi # tar ile sıkıştırılmış TAR dosyası oluşturma
+tar -xzvf arsiv_adi.tar.gz # tar ile sıkıştırılmış TAR dosyasını açma
+
+
+GZIP :
+gzip dosya_adi # Dosyayı GZIP formatında sıkıştırma
+gunzip dosya_adi.gz # GZIP sıkıştırılmış dosyayı açma
+
+
+
+BZIP2 Dosyaları:
+bzip2 dosya_adi # Dosyayı BZIP2 formatında sıkıştırma
+bunzip2 dosya_adi.bz2 # BZIP2 sıkıştırılmış dosyayı açma
+
+
+XZ :
+xz dosya_adi # Dosyayı XZ formatında sıkıştırma
+unxz dosya_adi.xz # XZ sıkıştırılmış dosyayı açma
