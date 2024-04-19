@@ -49,10 +49,13 @@ sudo apt autoremove               # Gereksiz bağımlılıkları kaldırır
 sudo apt autoclean                # İndirilen paket arşivlerini temizler
 
 dpgk 
-sudo dpkg -i paket_dosyasi.deb
-sudo dpkg -r paket_adi
-sudo dpkg -P paket_adi
-dpkg -s paket_adi
-dpkg -l
-dpkg -L paket_adi
+sudo dpkg -i paket_dosyasi.deb # .deb paketi yükleme
+sudo dpkg -r paket_adi # .deb paketi kaldırma (yapılandırma dosyalarını bırakır)
+sudo dpkg -P paket_adi # .deb paketi ve yapılandırma dosyalarını kaldırma
+sudo dpkg -P paket_adi # .deb paketi ve yapılandırma dosyalarını kaldırma
+dpkg -l # Sistemde yüklü olan tüm paketlerin listesini sağlama
+dpkg -l # Sistemde yüklü olan tüm paketlerin listesini sağlama
+dpkg -L paket_adi # Belirtilen paket tarafından yüklenen dosyaların listesini sağlama
+dpkg -S dosya_yolu # Belirtilen dosyanın hangi pakete ait olduğunu araştırma
+
 
