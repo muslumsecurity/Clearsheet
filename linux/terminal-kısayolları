@@ -1,0 +1,7 @@
+ctrl + A #imleci satır başına götürü.
+ctrl + E #imleci satır sonuna götürür.
+ctrl + u  #Bulunduğu satırın sol kısmının tümünü siler.
+ctrl + k #Bulunduğu satırın sağ tarafını tamamen siler.
+ctrl + l #tüm terminali temizler
+ctrl + z #çalışan komutu arkplana atar fg komutu ile arka plana atılmış süreci tekrar devam ettirir.
+ctrl + d #Terminali kapatır.
