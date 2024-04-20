@@ -1,0 +1,23 @@
+ls_release -a : Kullanılan linux distrosu hakında bilgi verir.
+cat /etc/issue  : Kullanılan lnux dağıtımının adı hakkında bilgi verir.
+
+uname -a : Kullanılan linux çekirdeği hakkında genel bir bilgi verir.
+hostname : bilgisayar adını verir.
+
+w : Komutu aktif kullanıcı ve login olma saatini ve en açtığı uygulama hakkında bilgi verir.
+who : Aktif kullanıcı ve login saatini verir
+whoami : Aktif kullanıcı blgisi verir.
+
+whereis : İlgili komut ve dosya ve klasörünün yolunu verir. ve man dosyasının yerini gösterir.
+which :  komutların yerini gösterir.
+
+
+uptime : Sistemin yüklendiğinden beri ne kadar açık olduğunu gösterir.
+htop : Süreç hakkında bilgi verir.
+date : Günün,tarih ve saat bilgisini verir.
+history: Geçmişte çalıştırılan komutları verir.
+
+
+cat /proc/meminfo : Memory hakkında detaylı bilgi verir.
+cat /proc/cpuinfo : Cpu hakkında detaylı bilgi verir.
+
