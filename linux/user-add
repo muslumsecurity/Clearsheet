@@ -1,0 +1,5 @@
+sudo adduser yeni_kullanici_adi # Yeni bir kullanıcı hesabı oluşturma
+sudo userdel kullanici_adi # Kullanıcı hesabını silme
+sudo userdel -r kullanici_adi # Kullanıcı hesabını ve ev dizinini silme
+sudo useradd -m -s /bin/bash yeni_kullanici_adi # Yeni kullanıcı ekler ve ev dizini oluşturur
+sudo passwd yeni_kullanici_adi # Kullanıcı için şifre belirleme
