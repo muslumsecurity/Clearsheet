@@ -1,0 +1,2 @@
+exec bash #Anlık bash geçmek.
+exec zsh  #Anlık zsh geçmek.
