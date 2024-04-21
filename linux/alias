@@ -1,0 +1,9 @@
+vim .bashrc #Bashrc aç.
+
+alias bashüzerineyazılacaktext = '<komut buraya gelecek>' 
+
+örnek :
+alias myip = 'curl ipinfo.io'
+
+
+Artık bash üzerine girilecek  myip yazısı yukarıdaki komutu çalıştıracak.
