@@ -1,4 +1,4 @@
-ls_release -a : Kullanılan linux distrosu hakında bilgi verir.
+lsb_release -a : Kullanılan linux distrosu hakında bilgi verir.
 cat /etc/issue  : Kullanılan lnux dağıtımının adı hakkında bilgi verir.
 
 uname -a : Kullanılan linux çekirdeği hakkında genel bir bilgi verir.
