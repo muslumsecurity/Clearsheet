@@ -1,0 +1,7 @@
+/bin : Shell de kullanılabilecek komut dosyaları buradadır.
+/sbin : Sistem komut dosyaları buradadır.
+/tmp : Geçici dosyalar buradadır.
+/dev : Donanım ile ilgili dosyalar buradadır.
+/var : Değişken dosyaları buradadır. (Event log olay kayıtlarının bulunduğu dizin)
+/proc : Süreç bilgisi ve anlık olayların dosyalarının kaydedildiği yerdir. (/proc/meminfo , /proc/cpuinfo)
+/etc : Konfigurasyon dosyalarının bulunduğu dizindir. (/etc/passwd , /etc/shodow)
