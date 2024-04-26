@@ -1,0 +1,18 @@
+chmod a+r = Tüm kullanıcılara okuma hakkı verir.
+chmod a+w = Tüm kullanıcılara yazma hakkı verir.
+chmod a+x = Tüm kullanıcılara çalıştırma hakkı verir.
+
+
+chmod u+r = Dosya sahibine okuma hakkı verir.
+chmod u+w = Dosya sahibine yazma hakkı verir.
+chmod u+x = Dosya sahibine çalıştırma hakkı verir.
+
+
+chmod g+r = Dosyanın grup sahibine okuma hakkı verir.
+chmod g+w = Dosyanın grup sahibine yazma hakkı verir.
+chmod g+x = Dosyanın grup sahibine çalıştırma hakkı ver
+
+
+chmod ug+r = Hem dosya sahibine hem de grubuna okuma hakkı verir.
+chmod ug+w = Hem dosya sahibine hem de grubuna yazma hakkı verir.
+chmod ug+x = Hem dosya sahibine hem de grubuna çalıştırma hakkı verir.
