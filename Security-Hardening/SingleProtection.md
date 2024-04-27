@@ -29,5 +29,8 @@
 ## 9. Kablosuz Ağ Güvenliği:
 - **Şifreleme ve SSID Ayarları:** Wi-Fi ağınızı WPA3 ile şifreleyin ve SSID yayınını kapatın.
 
+## 10. Ağ trafiğini monitör et:
+- **Ağ trafiğini izle.[Glasswire](https://glasswire.com/)
+
 ## 10. Sosyal Medya Güvenliği:
 - **Gizlilik Ayarları ve Profil Resmi:** Sosyal medya hesaplarınızın gizlilik ayarlarını sıkılaştırın. [Facebook Gizlilik Ayarları](https://www.facebook.com/settings?tab=privacy) gibi platform özel ayarlarını inceleyin.
