@@ -14,7 +14,7 @@
 - **İşletim Sistemi ve Uygulamalar:** Otomatik güncellemeleri etkinleştirin.
 
 ## 5. Veri Yedekleme:
-- **Yedekleme Araçları:** [Backblaze](https://www.backblaze.com/) veya [Acronis](https://www.acronis.com/) gibi çevrimiçi yedekleme hizmetlerini kullanın.
+- **Yedekleme Araçları:** [Backblaze](https://www.backblaze.com/) veya [Acronis](https://www.acronis.com/) gibi çevrimiçi yedekleme hizmetlerini kullanın. [AllwaySync]([https://www.acronis.com/](https://allwaysync.com/)) 
 
 ## 6. Güçlü Parolalar ve Kimlik Doğrulama:
 - **Parola Yöneticisi:** [LastPass](https://www.lastpass.com/) veya [1Password](https://1password.com/) kullanın.
