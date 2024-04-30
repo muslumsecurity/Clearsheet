@@ -28,6 +28,9 @@ nmap -f -T0 -n -Pn --data-length 200 -D RND:10 10.10.10.1 ->
 --data-lenght 200 arada bir pakete 200 byte ekle 
 -D RND:10 10 farklı sahte ip kullan
 
+# Nmap scan top 100 ports
+nmap -F <ip adress> -n -T5
+
 # my preference
 nmap -sV -sC -v -oA output <targetip>
 nmap -p- -v <targetip>
