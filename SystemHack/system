@@ -35,6 +35,10 @@ nmap -F <ip adress> -n -T5
 nmap -sV -sC -v -oA output <targetip>
 nmap -p- -v <targetip>
 -----------------------
+#Nmb-lookup - Netbios ile Hostname çıkarma.
+nmblookup -A <ipsubnet>
+ex : nmblookup -A 10.10.10.1/24
+-----------------------
 # SSH msfconsole 
 use exploit/multi/ssh/sshexec
 hydra -l <username> -P <wordlist> ssh://ipadres
