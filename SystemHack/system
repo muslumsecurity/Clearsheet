@@ -19,6 +19,15 @@ nmap -v -sT <targetip> -p-
 nmap -sV -sC -v -A <targetip> -p- 
 nmap -sT -sV -A -O -v -p 1–65535 <targetip> 
 
+# Firewall by-pass
+nmap -f -T0 -n -Pn --data-length 200 -D RND:10 10.10.10.1 -> 
+-f parametresi ile paketi parçala 
+-T0 parametresi ile yavaş tarama yap 
+-n dns çözümleme yapma 
+-Pn ile ping atma
+--data-lenght 200 arada bir pakete 200 byte ekle 
+-D RND:10 10 farklı sahte ip kullan
+
 # my preference
 nmap -sV -sC -v -oA output <targetip>
 nmap -p- -v <targetip>
