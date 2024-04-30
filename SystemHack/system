@@ -1,3 +1,9 @@
+ARP-SCAN
+arp-scan -l -s <fake ip adresi> -S <farklı bir mac adresi verebiliriz>
+
+Ex:
+arp-scan -l -s 10.10.10.2 -S 01-23-45-11-16-88 : Tüm ağa fake ip ve mac adresi ile soru sorar ve tarama gerçekleştirir. Gizlilik için önemli.
+
 NMAP
 
 # Alive hosts
