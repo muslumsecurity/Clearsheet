@@ -4,3 +4,12 @@ nmap --badsum <ipadres>
 nmap <ipadres> -Pn -n -T5
 nmap --mtu 5 <ipadre> -n -T5
 nmap  <ipadre> -S -n --T5
+
+# Firewall by-pass
+nmap -f -T0 -n -Pn --data-length 200 -D RND:10 10.10.10.1 -> 
+-f parametresi ile paketi parçala 
+-T0 parametresi ile yavaş tarama yap 
+-n dns çözümleme yapma 
+-Pn ile ping atma
+--data-lenght 200 arada bir pakete 200 byte ekle 
+-D RND:10 10 farklı sahte ip kullan
