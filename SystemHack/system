@@ -78,7 +78,8 @@ nmap --script=smb-check-vulns.nse <targetip> -p445
 
 # basic nmap scripts to enumerate shares and OS discovery
 nmap -p 139,445 192.168.1.1/24 --script smb-enum-shares.nse smb-os-discovery.nse
-
+nmap -p 139,445 10.10.10.10 --script smb-security-mode -> Karşı cihazın smb güvenlik konfigürasyonu hakkında bilgi verir.
+nmap -p139,445 10.10.10.10 --script smb-brute -> Userları döker.
 # Connect using Username
 root@kali:~# smbclient -L <targetip> -U username -p 445
 
