@@ -204,3 +204,4 @@ nmap 10.10.10.10 --script http-backup-finder -> Unutulmuş backup dosyalarına b
 nmap 10.10.10.10 --script http-config-backup -> Unutulmuş config backuplarını bulurlar.
 nmap 10.10.10.10 --script http-security-headers -> headerlarda ki security konfigürasyonlarını kontrol eder.
 nmap 10.10.10.10 --script http-slowloris-check -> apache serverlarda konfigürasyon içerisinde max connection limit ayarlanmazsa eğer gelen her paket için bağlantı açık kalır ve bir süre cihaz hizmet dışı kalır.
+nmap 10.10.10.10 --script http-userdir-enum -> potansiyel user taraması yapar.
