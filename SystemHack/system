@@ -176,7 +176,13 @@ auxiliary/scanner/snmp/snmp_login : metasploit
 
 -------------------------------------------------------
 #SSH
-
+nmap -p22 <ipadres> --script banner -> Porttan dönen baner bilgisi ile versiyon kontrol edilir.
+nmap -p22 <ipadres> --script ssh-auth-methods -> hangi authenticate metodlarını kabul ediyor ex : public key,pasword(güvensiz)
+nmap -p22 <ipadres> --script ssh2-enum-algos -> Ssh hangi algoritmaları kullanıyor.
 msfconsole post module : ssh_creds
 hydra bruteforce
-
+-------------------------------------------------------
+#MYSQL 
+nmap <ipadres> -p3306 --script mysql-info  -> Versiyon bilgisi vs getirir. Auth plugin name(Doğrulama adı eklentisi) mysql native password kullanılıyorsa bu geleneksel parola doğrulama yönetimidir ama güvenilir değildir.
+nmap <ipadres>  -p3306 --script mysql-enum -> Mysql konusundda enumeration yapar.
+nmap <ipadres> -p3306 --script mysql-users -> Userların tespiti.
