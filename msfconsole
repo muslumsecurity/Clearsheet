@@ -2,3 +2,9 @@ service postgresql start
 service postgresql status
 msfdb init
 msfdb run 
+
+
+search cve:<buraya tarih gelecek> 
+ex : search ftp cve:2018
+search rank:excellent cve:2018
+search ftp type:auxiliary check:yes #Eğer saldırmadan önce kontrol yapabilen modülleri getiriyor.
