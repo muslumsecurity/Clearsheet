@@ -15,6 +15,7 @@ whois <adress>
 # Dns zone Enum
 fierce -dns <adress>
 dnsrecon -d <adress>  -a -> Dns zone transfer 
+dnsenum tek.com -> Direk tüm dökümanları döker.
 --------------------------------------------
 Social phishing Online
 https://www.toolsbug.com/website-copier-online.php
