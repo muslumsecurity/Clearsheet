@@ -21,3 +21,7 @@ history: Geçmişte çalıştırılan komutları verir.
 cat /proc/meminfo : Memory hakkında detaylı bilgi verir.
 cat /proc/cpuinfo : Cpu hakkında detaylı bilgi verir.
 
+
+whois teknosa.com | grep 'Expiration' -> Büyük harf ile başlayanları getirir.
+whois teknosa.com | grep -i 'Expriation' -> Büyük küçük harf farketmez.
+whois teknosa.com | egrep -i "Expiration|Expires|Expiry" -> iç içe geçmiş kelimeleri yakalama.
