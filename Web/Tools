@@ -1,6 +1,6 @@
 #Nmap
 download vulnscan -> https://github.com/scipag/vulscan
-nmap --script-updatedb
+update nmap database -> nmap --script-updatedb
 
 #sqlmap
 sqlmap -u http://<targetip> --crawl=1
