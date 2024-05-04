@@ -1,3 +1,7 @@
+#Nmap
+download vulnscan -> https://github.com/scipag/vulscan
+
+
 #sqlmap
 sqlmap -u http://<targetip> --crawl=1
 sqlmap -u http://<targetip> --forms --batch --crawl=10 --cookie=jsessionid=54321 --level=5 --risk=3
