@@ -47,6 +47,7 @@ hydra -l <username> -P <wordlist> ssh://ipadres
 nmap -p22 <ipadres> --script banner -> Porttan dönen baner bilgisi ile versiyon kontrol edilir.
 nmap -p22 <ipadres> --script ssh-auth-methods -> hangi authenticate metodlarını kabul ediyor ex : public key,pasword(güvensiz)
 nmap -p22 <ipadres> --script ssh2-enum-algos -> Ssh hangi algoritmaları kullanıyor.
+nmap -p22 <ipadres> --script ssh-publickey-acceptance -> brute force yaparak elindeki public keyleri kullanarak authentice olmaya çalışır.
 msfconsole post module : ssh_creds
 hydra bruteforce
 
