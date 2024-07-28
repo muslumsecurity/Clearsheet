@@ -1,0 +1,22 @@
+Frekans :
+Birim zamanda ki titreşim sayısıdır. Örnek olarak 1 saniye içerisinde kaç kez el çırptığınız. eğer 1 tane çırpabiliyorsanız. Siz 1 saniye içerisinde 1 hz el çırpabiliyorsunuz. 50 kez yapabilseydiniz saniyede 50hz el çırpabiliyordunuz.
+
+1hz
+1000hz = 1 mghz
+1000mghz = 1ghz
+
+
+Modülasyon:
+Sinyalin taşımış olduğu veri tipidir. 
+Merhaba dediğiniz zaman bu bir ses sinyalidir. Bunun dalga boyu 20 - 100000 km arasındadır. Bunu alabilmek için antrenimizin 4' de 1 oranında olması gerekir. 
+Fm radyoları düşünün yaydıkları sinyali daha modüle ederek ses ve görüntü işlemleri daha düşük dalga boylarında daha yüksek frekanslarda yayınlarlar. Bizim antenlerimizin alabileceği hale getirirler. Buna modülasyon işlemi denir.
+
+
+
+Modem : 
+Modüle edilen ses veya görüntüleri daha düşük dalga boylarına dönüştürüp daha yüksek frekanstan yayınlayan modülasyonlardan gelen sinyalleri demodüle ederler. Bunu modemler yaparlar.
+
+
+
+frekans : 
+1 saniyede 4 vuruş gerçekleşiyor.Bu 1 saniyede 4 sinyal demek.
