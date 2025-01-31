@@ -1,0 +1,27 @@
+1-) link : https://www.torproject.org/download/languages/
+2-) link : gettor@torproject.org
+   Tor Browser'ı GetTor ile İndirme Adımları
+      E-posta Gönderme
+      
+      Yeni bir e-posta oluşturun.
+      Alıcı kısmına gettor@torproject.org adresini yazın.
+      E-posta gövdesine kullandığınız işletim sisteminin adını (Windows, macOS veya Linux) yazın.
+      E-postayı gönderin.
+      Cevap E-postasını Bekleyin
+      
+      GetTor, size içinde çeşitli indirme bağlantıları bulunan bir e-posta gönderecektir.
+      Gelen E-postayı İnceleyin
+      
+      Tor Browser’ı indirmek için gerekli bağlantılar bulunacaktır.
+      Kriptografik imza (indirme dosyasının güvenilir olup olmadığını doğrulamak için kullanılır). -> https://support.torproject.org/tbb/how-to-verify-signature/
+      İmza için kullanılan anahtarın parmak izi.
+      Paketin sağlama toplamı (checksum) (dosyanın bütünlüğünü kontrol etmek için).
+      Doğru Sürümü Seçin
+      
+      Size 32-bit veya 64-bit seçenekleri sunulabilir.
+      Bilgisayarınızın hangi mimariye sahip olduğunu öğrenerek uygun sürümü indirin.
+      Tor Browser'ı İndirin ve Kurun
+      
+      Gelen e-postadaki bağlantılardan Tor Browser’ı indirin.
+      Kriptografik imzayı doğrulamak isterseniz, sağlanan bilgilerle kontrol edin.
+      Kurulumu tamamlayarak Tor Browser’ı kullanmaya başlayın.
