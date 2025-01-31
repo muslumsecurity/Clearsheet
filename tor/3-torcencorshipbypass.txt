@@ -4,3 +4,4 @@
 Unutmayın ki e-postayı şu e-posta hizmeti sağlayıcılarından birinden göndermeniz gerekiyor: Riseup ya da Gmail.
 
 ardından tarayıcı ayarlarlarına git ve connection kısmında ki add a bridges manuel kısmını seç ve sana verilen hashleri gir.
+https://check.torproject.org/ -> giderek bağlantını kontrol et.
