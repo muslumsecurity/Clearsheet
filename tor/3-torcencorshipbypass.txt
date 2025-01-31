@@ -2,3 +2,5 @@
 2-) https://bridges.torproject.org/options click to advanced bridge(pluggable transport)
 3-) Köprüleri öğrenmenin bir yolu da bridges@torproject.org adresine e-posta göndermektir. E-postanın konusunu boş bırakın ve iletinin gövdesine "get transport obfs4" yazın. 
 Unutmayın ki e-postayı şu e-posta hizmeti sağlayıcılarından birinden göndermeniz gerekiyor: Riseup ya da Gmail.
+
+ardından tarayıcı ayarlarlarına git ve connection kısmında ki add a bridges manuel kısmını seç ve sana verilen hashleri gir.
