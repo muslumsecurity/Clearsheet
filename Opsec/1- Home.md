@@ -40,5 +40,4 @@
 - [ ] Kritik verileri taşımak veya yok etmek için önceden senaryo oluştur.  
 - [ ] Baskın veya saldırı durumunda hızlı tepki verebilmek için hazırlıklı ol.
 
-Bu adımları takip ederek evde OPSEC seviyeni yüksek tutabilirsin.
 
